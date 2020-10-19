@@ -52,3 +52,127 @@
    background-color: $light-color;
    color: set-txt-color($light-color);
 }
+
+.light-btn {
+   background-color: $white-color !important;
+
+   div {
+      background-color: $dark-color !important;
+      &:before {
+         background-color: $dark-color !important;
+      }
+
+      &:after {
+         background-color: $dark-color !important;
+      }
+   }
+
+   &:hover {
+      div {
+         background-color: $primary-color !important;
+         &:before {
+            background-color: $primary-color !important;
+         }
+
+         &:after {
+            background-color: $primary-color !important;
+         }
+      }
+   }
+}
+
+.dark-btn {
+   background-color: $dark-color;
+
+   div {
+      background-color: $light-color !important;
+      &:before {
+         background-color: $light-color !important;
+      }
+
+      &:after {
+         background-color: $dark-color !important;
+      }
+   }
+
+   &:hover {
+      // background-color: $primary-color !important;
+      div {
+         background-color: $secondary-color !important;
+         &:before {
+            background-color: $secondary-color !important;
+         }
+
+         &:after {
+            background-color: $secondary-color !important;
+         }
+      }
+   }
+}
+
+.active-side-left {
+   div {
+      &:before {
+         width: 70% !important;
+         right: auto !important;
+         left: 0 !important;
+      }
+
+      &:after {
+         width: 70% !important;
+         right: auto !important;
+         left: 0 !important;
+      }
+   }
+}
+
+.active-side-right {
+   div {
+      &:before {
+         width: 70% !important;
+         right: 0 !important;
+         left: auto !important;
+      }
+
+      &:after {
+         width: 70% !important;
+         right: 0 !important;
+         left: auto !important;
+      }
+   }
+}
+
+.dark-input {
+   border-bottom: 1px solid $dark-color !important;
+   &:focus {
+      outline: none;
+      border-color: $primary-color !important;
+   }
+}
+
+.input-group {
+   padding: 0.2rem;
+   margin-left: 1rem;
+
+   input {
+      padding: 0.5rem 1rem;
+      border: none;
+   }
+}
+
+.image-container-rounded {
+   position: relative;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   overflow: hidden;
+
+   img {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      left: -15px;
+      top: -15px;
+   }
+}

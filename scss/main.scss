@@ -1,5 +1,5 @@
 @import "variables";
-@import "utilities";
+
 * {
    margin: 0;
    padding: 0;
@@ -33,13 +33,26 @@ img {
    background-color: $light-gray-color;
    height: auto;
    min-height: 100vh;
+   transition: width 0.5s ease-in-out;
+   overflow-x: hidden;
+   right: 0;
 }
 
 .side-bar {
-   width: 15vw;
+   position: relative;
+   width: 22rem;
    background-color: $dark-color;
    height: auto;
    min-height: 100%;
+   transition: margin 0.5s ease-in-out;
+
+   &.toggled {
+      margin-left: -22rem;
+   }
+
+   &.sticky {
+      overflow: auto;
+   }
 
    h2 {
       font-size: 0.85rem;
@@ -154,18 +167,77 @@ img {
    }
 }
 
+header {
+   width: 100%;
+}
+
 #top-nav {
-   width: 85vw;
+   width: 100%;
+   padding: 1rem;
    background-color: $white-color;
+   display: flex;
+   align-items: center;
 
    &-button {
       width: 2rem;
       height: 2rem;
+      line-height: 2rem;
+      flex: none;
+      border: none;
+      cursor: pointer;
+
+      &:focus {
+         outline: none;
+      }
 
       div {
          position: relative;
          width: 100%;
+         background-color: $dark-color;
          height: 3px;
+
+         &:before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            right: 0;
+            background-color: $dark-color;
+         }
+
+         &:after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            right: 0;
+            background-color: $dark-color;
+         }
+      }
+   }
+
+   .nav-menu {
+      display: flex;
+      float: right;
+
+      li {
+         position: relative;
+      }
+
+      li > a {
+         padding: 1rem;
+         font-size: 1.5rem;
+      }
+
+      .selection-list {
+         display: none;
+         position: absolute;
       }
    }
 }
+
+@import "utilities";

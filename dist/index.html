@@ -9,7 +9,7 @@
    </head>
    <body>
       <div id="main-wrapper" class="flex-row">
-         <section id="sidebar" class="side-bar">
+         <section id="side-bar" class="side-bar active-side-bar">
             <div class="container">
                <div class="side-bar-logo">
                   <div class="logo"><i class="fas fa-cube"></i> AppStack</div>
@@ -263,9 +263,30 @@
 
          <header>
             <nav id="top-nav">
-               <button id="top-nav-button">
+               <button id="top-nav-button" class="light-btn">
                   <div></div>
                </button>
+
+               <div class="input-group">
+                  <input type="text" placeholder="Search Project" class="dark-input" />
+               </div>
+
+               <ul class="nav-menu">
+                  <li>
+                     <a href=""> <i class="far fa-comment"></i></a>
+                  </li>
+                  <li>
+                     <a href=""> <i class="far fa-bell-slash"></i></a>
+                  </li>
+                  <li>
+                     <div class="image-container-rounded"><img src="https://www.countryflags.io/US/flat/64.png" alt="be" /></div>
+                     <ul class="selection-list">
+                        <li><img src="https://www.countryflags.io/gr/flat/64.png" alt="be" /></li>
+                        <li><img src="https://www.countryflags.io/AL/flat/64.png" alt="be" /></li>
+                        <li><img src="https://www.countryflags.io/US/flat/64.png" alt="be" /></li>
+                     </ul>
+                  </li>
+               </ul>
             </nav>
          </header>
       </div>
