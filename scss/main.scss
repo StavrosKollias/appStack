@@ -21,10 +21,131 @@ ul {
 }
 
 a {
+  display: block;
   text-decoration: none;
   color: $gray-color;
 }
-
 img {
   width: 100%;
+}
+
+#main-wrapper {
+  height: 100vh;
+}
+
+.side-bar {
+  width: 20rem;
+  background-color: $dark-color;
+  height: 100%;
+
+  h2 {
+    font-size: 0.6rem;
+    color: $gray-color;
+  }
+
+  &-logo {
+    display: block;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: $white-color;
+      justify-content: start;
+      padding: 2rem 0;
+      .fa-cube {
+        margin-right: 1rem;
+        color: $primary-color;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &-item {
+    position: relative;
+    li > a {
+      display: flex;
+      padding: 0.5rem 0;
+      position: relative;
+      color: $light-gray-color;
+      font-size: 0.9rem;
+
+      .fas {
+        color: $gray-color;
+        font-size: 1rem;
+      }
+
+      .fas:first-child {
+        margin-right: 0.5rem;
+      }
+
+      .fas:last-child {
+        position: absolute;
+        right: 0;
+        margin-right: 1rem;
+      }
+
+      // &.current {
+      //   & > .fa-angle-down:before {
+      //     content: "\f106";
+      //   }
+      // }
+
+      &:focus {
+        color: $light-color;
+
+        .fas:last-child {
+          color: $light-color;
+        }
+
+        .fas:first-child {
+          color: $light-color;
+        }
+
+        // & + .side-bar-item-list {
+        //   height: auto;
+        //   opacity: 1;
+        // }
+      }
+    }
+
+    .side-bar-item-list {
+      padding-left: 1.5rem;
+      display: block;
+      height: 0;
+      opacity: 0;
+      transition: height 0.5s ease-in-out;
+
+      &.active-side-1 {
+        height: auto;
+        opacity: 1;
+      }
+
+      // &:focus-within {
+      //   height: auto;
+      //   opacity: 1;
+      // }
+
+      // li:focus,
+      // li:focus-within {
+      //   ul {
+      //     height: auto;
+      //     opacity: 1;
+      //   }
+      // }
+
+      ul {
+        display: block;
+        width: 100%;
+        padding-left: 0.5rem;
+        height: 0;
+        opacity: 0;
+        transition: height 0.5s ease-in-out;
+
+        &.active-sidebar-2 {
+          height: auto;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }

@@ -1,5 +1,5 @@
 .container {
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 %notiFy {
@@ -9,26 +9,28 @@
   line-height: 0.7rem;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
 .notify {
   @extend %notiFy;
   padding: 0.2rem 0.4rem;
   font-size: 0.7rem;
   float: right;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  margin-right: 0.5rem;
 }
 
-.notifications {
-  color: $gray-color;
-  position: relative;
-  font-size: 1.2rem;
+.opacity-1 {
+  opacity: 1;
+}
 
-  & > .notify {
-    @extend %notiFy;
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: $primary-color;
-    color: set-txt-color($primary-color);
-  }
+.opacity-0 {
+  opacity: 0;
 }
 
 .bg-primary {
