@@ -1,8 +1,9 @@
 @import "variables";
-
+@import "utilities";
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -13,4 +14,304 @@ h2,
 h3,
 h4 {
   font-size: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $gray-color;
+}
+
+img {
+  width: 100%;
+}
+
+// ClaSSES
+#app-stack-container {
+  cursor: pointer;
+  display: flex;
+  height: 100vh;
+  background-color: $light-color;
+  transition: grid-template-columns 2s;
+  overflow-x: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+#side-bar {
+  background-color: $dark-color;
+  height: 100%;
+  overflow-y: auto;
+  width: 20rem;
+
+  &-logo {
+    & > a {
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+      color: $white-color;
+
+      .fas {
+        color: $primary-color;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  ul {
+    padding: 0.5rem 0;
+
+    li {
+      padding: 0.5rem 0;
+    }
+
+    li > a,
+    li {
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: $light-gray-color;
+
+      .fas:first-child,
+      .far:first-child {
+        margin-right: 0.2rem;
+        color: $gray-color;
+      }
+
+      .fa-angle-down,
+      .fa-angle-up {
+        float: right;
+        margin-right: 1rem;
+      }
+
+      &:hover {
+        color: $light-color;
+        .fas:first-child,
+        .far:first-child {
+          color: $gray-color;
+          text-shadow: 0.1px 0.1px 0.5px $gray-color;
+        }
+
+        .fas:last-child {
+          color: $light-color !important;
+        }
+      }
+    }
+
+    li > ul {
+      padding-left: 1.5rem;
+      display: none;
+
+      & > li {
+        padding: 0.5rem 0;
+      }
+    }
+  }
+
+  &-title {
+    opacity: 1;
+    font-size: 0.7rem;
+    font-weight: normal;
+    color: $light-gray-color;
+    cursor: context-menu;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+#header {
+  flex: 1;
+  #main-nav {
+    background-color: $white-color;
+    padding: 1rem 0.5rem;
+    // width: calc(80vw + 2rem);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    min-height: 4rem;
+    margin: auto;
+
+    &-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex: 0.3;
+      min-width: 10rem;
+      max-width: 20rem;
+
+      .language-selector {
+        &-selected {
+          position: relative;
+          width: 30px;
+          height: 30px;
+          overflow: hidden;
+          border-radius: 80px;
+          box-shadow: 0.5px 1px 1px $light-gray-color;
+
+          & > img {
+            width: 45px;
+            height: 45px;
+            left: 0;
+            right: 0;
+            top: -5px;
+            position: absolute;
+          }
+
+          &:hover {
+            > ul {
+              display: block;
+            }
+          }
+        }
+        & > ul {
+          display: none;
+        }
+      }
+
+      .meta {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+
+        &:hover {
+          & > ul {
+            display: block;
+          }
+        }
+
+        & > img {
+          width: 30px;
+          height: 30px;
+          object-fit: cover;
+          border-radius: 50%;
+          margin-right: 1rem;
+        }
+
+        & > span {
+          font-size: 0.8rem;
+          color: $dark-color;
+        }
+
+        &-menu {
+          top: 100%;
+          right: 0;
+          width: 120%;
+          padding: 0.5rem;
+          background-color: $light-color;
+          position: absolute;
+          display: none;
+          box-shadow: 0.5px 0.5px 3px $light-gray-color;
+
+          & > li {
+            padding: 0.5rem 1rem;
+
+            &:hover {
+              background-color: $light-gray-color;
+              color: set-txt-color($light-gray-color);
+            }
+
+            a {
+              font-size: 0.8rem;
+            }
+          }
+
+          & > li:nth-child(3) {
+            border-bottom: 1px solid $light-gray-color;
+          }
+        }
+      }
+    }
+
+    &-controls {
+      position: relative;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex: 0;
+
+      & > input[type="text"] {
+        border: 1px solid $white-color;
+        padding: 0.8rem 1rem;
+
+        &:focus {
+          outline: none;
+          border-bottom: 1px solid $primary-color;
+        }
+      }
+
+      & > input[type="checkbox"] {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        opacity: 0;
+        z-index: 1;
+        left: 0;
+      }
+
+      .sandwitch-container {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+
+        div {
+          width: 100%;
+          height: 3px;
+          position: relative;
+          background-color: $dark-color;
+        }
+
+        div:before {
+          content: "";
+          position: absolute;
+          background-color: $dark-color;
+          top: -0.5rem;
+          width: 100%;
+          height: 3px;
+        }
+
+        div:after {
+          content: "";
+          position: absolute;
+          background-color: $dark-color;
+          top: 0.5rem;
+          width: 100%;
+          height: 3px;
+        }
+      }
+
+      & > input[type="checkbox"]:hover .sandwitch-container {
+        cursor: pointer;
+        div {
+          background-color: $secondary-color;
+        }
+
+        div:after {
+          background-color: $secondary-color;
+        }
+
+        div::before {
+          background-color: $secondary-color;
+        }
+      }
+
+      & > input[type="checkbox"]:checked + .sandwitch-container {
+        div {
+          //   transform: rotate(125deg);
+          background-color: transparent;
+          background-color: $secondary-color;
+        }
+        div:after {
+          background-color: $secondary-color;
+        }
+
+        div::before {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
 }

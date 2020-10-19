@@ -1,1 +1,52 @@
+.container {
+  padding: 0 1rem;
+}
 
+%notiFy {
+  text-align: center;
+  box-sizing: unset;
+  border-radius: 1rem;
+  line-height: 0.7rem;
+}
+
+.notify {
+  @extend %notiFy;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.7rem;
+  float: right;
+}
+
+.notifications {
+  color: $gray-color;
+  position: relative;
+  font-size: 1.2rem;
+
+  & > .notify {
+    @extend %notiFy;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: $primary-color;
+    color: set-txt-color($primary-color);
+  }
+}
+
+.bg-primary {
+  background-color: $primary-color;
+  color: set-txt-color($primary-color);
+}
+
+.bg-secondary {
+  background-color: $secondary-color;
+  color: set-txt-color($secondary-color);
+}
+
+.bg-gray {
+  background-color: $gray-color;
+  color: set-txt-color($gray-color);
+}
+
+.bg-light {
+  background-color: $light-color;
+  color: set-txt-color($light-color);
+}
