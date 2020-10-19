@@ -1,118 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/cb82fdc551.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="./css/main.css" />
-    <title>App Stack | Dashboard Default</title>
-  </head>
-  <body>
-    <div id="main-wrapper" class="flex-row">
-      <section id="sidebar" class="side-bar">
-        <div class="container">
-          <div class="side-bar-logo">
-            <div class="logo"><i class="fas fa-cube"></i> AppStack</div>
-          </div>
-          <h2>Pages</h2>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#Dashboard">
-                <i class="fas fa-sliders-h"></i>Dashboard
-                <span class="notify opacity-1 bg-primary">5</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#Default">Default</a></li>
-                <li><a href="#Analytics">Analytics</a></li>
-                <li><a href="#E-commerse">E-commerse</a></li>
-                <li><a href="#Social">Social</a></li>
-                <li><a href="#Social">Crypto</a></li>
-              </ul>
-            </li>
-          </ul>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="https://kit.fontawesome.com/cb82fdc551.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="./css/main.css" />
+      <title>App Stack | Dashboard Default</title>
+   </head>
+   <body>
+      <div id="main-wrapper" class="flex-row">
+         <section id="sidebar" class="side-bar">
+            <div class="container">
+               <div class="side-bar-logo">
+                  <div class="logo"><i class="fas fa-cube"></i> AppStack</div>
+               </div>
+               <h2>Pages</h2>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#Dashboard">
+                        <i class="fas fa-sliders-h"></i>Dashboards
+                        <span class="notify opacity-1 bg-primary">5</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#Default">Default</a></li>
+                        <li><a href="#Analytics">Analytics</a></li>
+                        <li><a href="#E-commerse">E-commerse</a></li>
+                        <li><a href="#Social">Social</a></li>
+                        <li><a href="#Social">Crypto</a></li>
+                     </ul>
+                  </li>
+               </ul>
 
-          <ul class="side-bar-item">
-            <li>
-              <a href="#Pages">
-                <i class="fas fa-pager"></i>Pages
-                <span class="notify opacity-1 bg-primary">5</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#Profile">Profile</a></li>
-                <li><a href="#Settings">Settings</a></li>
-                <li><a href="#Clients">Clients</a></li>
-                <li>
-                  <a href="#Projects"
-                    >Projects <i class="fas fa-angle-down"></i>
-                  </a>
-                  <ul>
-                    <li><a href="#list">List</a></li>
-                    <li>
-                      <a href="#details"
-                        >Detail
-                        <span class="notify opacity-1 bg-primary">New</span></a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="#Invoice">Invoice</a></li>
-                <li><a href="#Pricing">Pricing</a></li>
-                <li><a href="#Tasks">Tasks</a></li>
-                <li>
-                  <a href="#Chat"
-                    >Chat
-                    <span class="notify opacity-1 bg-primary">New</span></a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#Pages">
+                        <i class="fas fa-pager"></i>Pages
+                        <span class="notify opacity-1 bg-primary">5</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#Profile">Profile</a></li>
+                        <li><a href="#Settings">Settings</a></li>
+                        <li><a href="#Clients">Clients</a></li>
+                        <li>
+                           <a href="#Projects">Projects <i class="fas fa-angle-down"></i> </a>
+                           <ul>
+                              <li><a href="#list">List</a></li>
+                              <li>
+                                 <a href="#details">Detail <span class="notify opacity-1 bg-primary">New</span></a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li><a href="#Invoice">Invoice</a></li>
+                        <li><a href="#Pricing">Pricing</a></li>
+                        <li><a href="#Tasks">Tasks</a></li>
+                        <li>
+                           <a href="#Chat">Chat <span class="notify opacity-1 bg-primary">New</span></a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#Auth">
+                        <i class="fas fa-user"></i>Auth
+                        <span class="notify opacity-1 bg-gray">Special</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#SignIn">Sign In</a></li>
+                        <li><a href="#SignUp">Sign Up</a></li>
+                        <li><a href="#ResetPassword">Reset Password</a></li>
+                        <li><a href="#404">404 Page</a></li>
+                        <li><a href="#500">500 Page</a></li>
+                        <li><a href="#Tasks">Tasks</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#layouts">
+                        <i class="fas fa-desktop"></i>Laypouts
+                        <!-- <span class="notify opacity-1 bg-primary">5</span> -->
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#SignIn">Sticky Slider</a></li>
+                        <li><a href="#collapsedSidebar">Collapsed Sidebar</a></li>
+                        <li><a href="#boxedLayout">Boxed Layout</a></li>
+                        <li><a href="#classic">Clasic Theme</a></li>
+                        <li><a href="#modern">Modern Theme</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#layouts">
+                        <i class="fas fa-book-open"></i>Documentation
+                        <!-- <span class="notify opacity-1 bg-primary">5</span> -->
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#Introduction">Introduction</a></li>
+                        <li><a href="#GettingStarted">Getting Started</a></li>
+                        <li><a href="#EnviromentVariables">Enviroment Variables</a></li>
+                        <li><a href="#Deployment">Deployment</a></li>
+                        <li><a href="#StateManagement">State Management </a></li>
+                        <li>
+                           <a href="#Plugins">Plugins <span class="notify opacity-1 bg-primary">New</span></a>
+                        </li>
+                        <li><a href="#ChangeLog">ChangeLog</a></li>
+                     </ul>
+                  </li>
+               </ul>
 
-          <ul class="side-bar-item">
-            <li>
-              <a href="#Auth">
-                <i class="fas fa-user"></i>Auth
-                <!-- <span class="notify opacity-1 bg-primary">5</span> -->
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#SignIn">Sign In</a></li>
-                <li><a href="#SignUp">Sign Up</a></li>
-                <li><a href="#ResetPassword">Reset Password</a></li>
-                <li><a href="#404">404 Page</a></li>
-                <li><a href="#500">500 Page</a></li>
-                <li><a href="#Tasks">Tasks</a></li>
-              </ul>
-            </li>
-          </ul>
+               <h2>Tools & Components</h2>
 
-          <ul class="side-bar-item">
-            <li>
-              <a href="#layouts">
-                <i class="fas fa-user"></i>Laypouts
-                <span class="notify opacity-1 bg-primary">5</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#SignIn">Sticky Slider</a></li>
-                <li><a href="#collapsedSidebar">Collapsed Sidebar</a></li>
-                <li><a href="#boxedLayout">Boxed Layout</a></li>
-                <li><a href="#classic">Clasic Theme</a></li>
-                <li><a href="#modern">Modern Theme</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </section>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="fas fa-book-open"></i>UI Elements
+                        <!-- <span class="notify opacity-1 bg-primary">5</span> -->
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#Alerts">Alerts</a></li>
+                        <li><a href="#buttons">Buttons</a></li>
+                        <li><a href="#cards">Cards</a></li>
+                        <li><a href="#carousel">Carousel</a></li>
+                        <li><a href="#embededvideo">Embeded Video</a></li>
+                        <li>
+                           <a href="#general">General <span class="notify opacity-1 bg-secondary">10+</span></a>
+                        </li>
+                        <li><a href="#grid">Grid</a></li>
+                        <li><a href="#modal">Modals</a></li>
+                        <li><a href="#tabs">Tabs</a></li>
+                        <li><a href="#typography">Typography</a></li>
+                     </ul>
+                  </li>
+               </ul>
 
-      <header>Top Nav</header>
-    </div>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="fas fa-heart"></i>Icons
+                        <span class="notify opacity-1 bg-secondary">1500+</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#feather">Feather</a></li>
+                        <li><a href="#fontAwsome">Font Awsome</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="far fa-check-square"></i>Forms
+                        <span class="notify opacity-0 bg-secondary">0</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#layouts">Lay Outs</a></li>
+                        <li><a href="#basicInputs">Basic Inputs</a></li>
+                        <li><a href="#basicInputs">Input Groups</a></li>
+                     </ul>
+                  </li>
+               </ul>
 
-    <script src="./js/navigationHandlers.js"></script>
-  </body>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#tables">
+                        <i class="fas fa-table"></i>Tables
+                        <span class="notify opacity-1 bg-primary">1</span>
+                     </a>
+                  </li>
+               </ul>
+
+               <h2>Plugins & Addons</h2>
+
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="far fa-check-square"></i>Forms Plugins
+                        <span class="notify opacity-0 bg-secondary">0</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#advanceInputs">Advance Inputs</a></li>
+                        <li><a href="#editors">Editors</a></li>
+                        <li><a href="#validation">Validation</a></li>
+                        <li><a href="#validation">Wizard</a></li>
+                     </ul>
+                  </li>
+               </ul>
+
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="fas fa-table"></i>Advance Tables
+                        <span class="notify opacity-0 bg-secondary">0</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#pagination">Pagination</a></li>
+                        <li><a href="#rowSelection">Row Selection</a></li>
+                        <li><a href="#expandable Rows">Expandable Rows</a></li>
+                        <li><a href="#CSV">Export CSV</a></li>
+                     </ul>
+                  </li>
+               </ul>
+
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="fas fa-chart-pie"></i>Charts
+                        <span class="notify opacity-0 bg-secondary">0</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#pagination">Chart.js</a></li>
+                        <li><a href="#rowSelection">Apex Charts</a></li>
+                     </ul>
+                  </li>
+               </ul>
+
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#notifications">
+                        <i class="fas fa-bell"></i>Notifications
+                        <span class="notify opacity-0 bg-primary">1</span>
+                     </a>
+                  </li>
+               </ul>
+
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#map">
+                        <i class="fas fa-map-marker"></i>Maps
+                        <span class="notify opacity-0 bg-primary">0</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+
+                     <ul class="side-bar-item-list">
+                        <li><a href="#pagination">Google</a></li>
+                        <li><a href="#rowSelection">Vector Maps</a></li>
+                     </ul>
+                  </li>
+               </ul>
+
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#notifications">
+                        <i class="fas fa-calendar-week"></i>Calender
+                        <span class="notify opacity-0 bg-primary">1</span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+
+         <header>
+            <nav id="top-nav">
+               <button id="top-nav-button">
+                  <div></div>
+               </button>
+            </nav>
+         </header>
+      </div>
+
+      <script src="./js/navigationHandlers.js"></script>
+   </body>
 </html>

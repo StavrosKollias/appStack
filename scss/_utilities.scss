@@ -1,54 +1,54 @@
 .container {
-  padding: 0 2rem;
+   padding: 0 2rem;
 }
 
 %notiFy {
-  text-align: center;
-  box-sizing: unset;
-  border-radius: 1rem;
-  line-height: 0.7rem;
+   text-align: center;
+   box-sizing: unset;
+   border-radius: 3px;
+   line-height: 0.85rem;
 }
 
 .flex-row {
-  display: flex;
-  flex-direction: row;
+   display: flex;
+   flex-direction: row;
 }
 
 .notify {
-  @extend %notiFy;
-  padding: 0.2rem 0.4rem;
-  font-size: 0.7rem;
-  float: right;
-  position: absolute;
-  right: 0;
-  z-index: 1;
-  margin-right: 0.5rem;
+   @extend %notiFy;
+   padding: 0.2rem 0.4rem;
+   font-size: 0.8rem;
+   float: right;
+   position: absolute;
+   right: 0;
+   z-index: 1;
+   margin-right: 0.5rem;
 }
 
 .opacity-1 {
-  opacity: 1;
+   opacity: 1;
 }
 
 .opacity-0 {
-  opacity: 0;
+   opacity: 0;
 }
 
 .bg-primary {
-  background-color: $primary-color;
-  color: set-txt-color($primary-color);
+   background-color: $primary-color;
+   color: set-txt-color($primary-color);
 }
 
 .bg-secondary {
-  background-color: $secondary-color;
-  color: set-txt-color($secondary-color);
+   background-color: $secondary-color;
+   color: set-txt-color($secondary-color);
 }
 
 .bg-gray {
-  background-color: $gray-color;
-  color: set-txt-color($gray-color);
+   background-color: $gray-color;
+   color: set-txt-color($gray-color);
 }
 
 .bg-light {
-  background-color: $light-color;
-  color: set-txt-color($light-color);
+   background-color: $light-color;
+   color: set-txt-color($light-color);
 }

@@ -1,8 +1,8 @@
 $primary-color: #186ce9;
 $secondary-color: #1f9bcf;
 $white-color: #fff;
-$dark-color: #262f3d;
-$gray-color: #5a6269;
+$dark-color: #404e64;
+$gray-color: #9ba9b4;
 $light-gray-color: #cfcdcd;
 $light-color: #f7f9fc;
 $status-completed-color: #4bbf73;
@@ -10,9 +10,9 @@ $status-progress-color: #f0ad4e;
 $status-calceled-color: #d9534f;
 
 @function set-txt-color($color) {
-  @if (lightness($color) >30) {
-    @return $white-color;
-  } @else {
-    @return $dark-color;
-  }
+   @if (lightness($color) >30) {
+      @return $white-color;
+   } @else {
+      @return $dark-color;
+   }
 }
