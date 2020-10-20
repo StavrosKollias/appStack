@@ -1,10 +1,10 @@
-function GenerateHandlersSideBar() {
-   const ulItems = document.querySelectorAll(".side-bar-item");
+function GenerateHandlersSideBar(sideBar) {
+   const ulItems = sideBar.querySelectorAll(".side-bar-item");
 
-   ulItems.forEach((element, i) => {
+   ulItems.forEach(function (element, i) {
       const btn = element.children[0].querySelector("a");
       const submenu = element.querySelector(".side-bar-item-list");
-      btn.addEventListener("click", (e) => {
+      btn.addEventListener("click", function (e) {
          const activeSideMenu = document.querySelector(".active-side-1");
          const activeBtn = document.querySelector(".current");
          if (submenu.classList.length == 1) {
@@ -20,9 +20,9 @@ function GenerateHandlersSideBar() {
 
       if (submenu) {
          const subMenuSub = submenu.querySelectorAll("ul");
-         subMenuSub.forEach((element, i) => {
+         subMenuSub.forEach(function (element, i) {
             const subBtnSub = element.parentElement.querySelector("a");
-            subBtnSub.addEventListener("click", (e) => {
+            subBtnSub.addEventListener("click", function (e) {
                const activeSideMenu2 = document.querySelector(".active-side-2");
                if (element.classList.length == 0) {
                   const activeBtn = document.querySelector(".current-2");
@@ -40,41 +40,67 @@ function GenerateHandlersSideBar() {
    });
 }
 
-GenerateHandlersSideBar();
-
-function generateNavBtnFlag() {
-   const activeSideNav = document.querySelector(".side-bar");
-   if (activeSideNav) {
+function generateNavBtnFlag(sideBar) {
+   if (sideBar) {
       const btnNav = document.getElementById("top-nav-button");
       btnNav.classList.remove("active-side-left");
 
       btnNav.addEventListener("click", function (e) {
-         const rectEl = activeSideNav.getBoundingClientRect();
+         const rectEl = sideBar.getBoundingClientRect();
          if (rectEl.right <= (window.innerWidth || document.documentElement.clientWidth) && rectEl.right > 0) {
             btnNav.classList.add("active-side-left");
-            activeSideNav.classList.add("hidden");
-            activeSideNav.classList.add("toggled");
-            clearSideMenu();
+            sideBar.classList.add("hidden");
+            sideBar.classList.add("toggled");
+            closeOpenedSideMenus(sideBar);
          } else {
             btnNav.classList.remove("active-side-left");
-            activeSideNav.classList.remove("toggled");
+            sideBar.classList.remove("toggled");
          }
       });
    }
 }
 
-generateNavBtnFlag();
-
-function clearSideMenu() {
-   const activeSideMenu = document.querySelector(".active-side-1");
-   const activeBtn = document.querySelector(".current");
+function closeOpenedSideMenus(sideBar) {
+   const activeSideMenu = sideBar.querySelector(".active-side-1");
+   const activeBtn = sideBar.querySelector(".current");
    if (activeSideMenu) activeSideMenu.classList.remove("active-side-1");
    if (activeBtn) activeBtn.classList.remove("current");
-   const activeSideMenu2 = document.querySelector(".active-side-2");
-   const activeBtn2 = document.querySelector(".current-2");
+   const activeSideMenu2 = sideBar.querySelector(".active-side-2");
+   const activeBtn2 = sideBar.querySelector(".current-2");
    if (activeSideMenu2) activeSideMenu.classList.remove("active-side-2");
    if (activeBtn) activeBtn2.classList.remove("current-2");
 }
+
+function addEventListenerToUserInfo(userInfoContainers) {
+   userInfoContainers.forEach(function (element) {
+      element.addEventListener("click", function (event) {
+         const settingsPopup = element.querySelector(".user-info-settings");
+         var active = settingsPopup.dataset.active == "true";
+         active ? (settingsPopup.dataset.active = "false") : (settingsPopup.dataset.active = "true");
+         active ? element.classList.remove("active") : element.classList.add("active");
+      });
+   });
+}
+
+function getUsersInfoContainer() {
+   const userInfoContainers = document.querySelectorAll('[data-role="user-info"');
+   if (userInfoContainers.length > 0) {
+      addEventListenerToUserInfo(userInfoContainers);
+   }
+}
+
+function getSideBar() {
+   const sideBars = document.querySelectorAll('[data-role="side-bar"]');
+   if (sideBars.length > 0) {
+      sideBars.forEach(function (e) {
+         GenerateHandlersSideBar(e);
+         generateNavBtnFlag(e);
+      });
+   }
+}
+
+getSideBar();
+getUsersInfoContainer();
 
 const isInViewPort = (el) => {
    const rect = el.getBoundingClientRect();
@@ -85,3 +111,11 @@ const isInViewPort = (el) => {
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
    );
 };
+
+function handleStickySideBar() {
+   const activeSideNav = document.querySelector(".side-bar");
+   const naimWrapper = document.getElementById("main-wrapper");
+   activeSideNav.classList.remove("toggled");
+   activeSideNav.classList.add("sticky");
+   naimWrapper.classList.add("sticky");
+}

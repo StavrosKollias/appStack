@@ -30,65 +30,79 @@ img {
 }
 
 #main-wrapper {
-   background-color: $light-gray-color;
-   height: auto;
-   min-height: 100vh;
-   transition: width 0.5s ease-in-out;
-   overflow-x: hidden;
-   right: 0;
+   width: 100%;
+   &[data-theme="dark"] {
+      background-color: $light-gray-color;
+   }
+
+   &[data-theme="light"] {
+      background-color: $light-gray-primary-color;
+   }
+   @extend %main-wrapper;
+   &.sticky {
+      overflow-y: auto;
+      height: 100vh;
+   }
 }
 
 .side-bar {
-   position: relative;
-   width: 22rem;
-   background-color: $dark-color;
-   height: auto;
-   min-height: 100%;
-   transition: margin 0.5s ease-in-out;
+   &[data-theme="dark"] {
+      @extend %side-bar;
+      background-color: $dark-color;
 
-   &.toggled {
-      margin-left: -22rem;
+      .logo {
+         color: $light-color !important;
+      }
+
+      .side-bar-section-title {
+         @extend %side-bar-section-title;
+         color: $light-gray-color;
+      }
+
+      &.toggled {
+         margin-left: -20rem;
+      }
+      &.sticky {
+         overflow: auto;
+         height: 100vh;
+      }
    }
 
-   &.sticky {
-      overflow: auto;
-   }
+   &[data-theme="light"] {
+      @extend %side-bar;
+      background-color: $light-color;
 
-   h2 {
-      font-size: 0.85rem;
-      color: $light-gray-color;
-      font-weight: 400;
-      margin: 0.5rem 0;
+      .logo {
+         color: $dark-color;
+      }
+
+      .side-bar-section-title {
+         @extend %side-bar-section-title;
+         color: $dark-color;
+      }
+
+      &.toggled {
+         margin-left: -20rem;
+      }
+
+      &.sticky {
+         overflow: auto;
+         height: 100vh;
+      }
    }
 
    &-logo {
       display: block;
 
       .logo {
-         display: flex;
-         align-items: center;
-         color: $white-color;
-         justify-content: start;
-         padding: 2rem 0;
-         font-size: 1.4rem;
-         .fa-cube {
-            margin-right: 1rem;
-            color: $primary-color;
-            font-size: 1.7rem;
-         }
+         @extend %side-bar-logo;
       }
    }
 
    &-item {
       position: relative;
       li > a {
-         display: flex;
-         align-items: center;
-         padding: 0.9rem 0;
-         position: relative;
-         color: $light-gray-color;
-         font-size: 1rem;
-
+         @extend %side-bar-button;
          .fas,
          .far {
             color: $gray-color;
@@ -131,7 +145,7 @@ img {
          }
       }
 
-      .side-bar-item-list {
+      &-list {
          display: block;
          overflow: hidden;
          height: 0;
@@ -167,75 +181,127 @@ img {
    }
 }
 
-header {
-   width: 100%;
-}
+.top-nav {
+   @extend %top-nav;
+   &[data-theme="light"] {
+      background-color: $white-color;
+   }
 
-#top-nav {
-   width: 100%;
-   padding: 1rem;
-   background-color: $white-color;
-   display: flex;
-   align-items: center;
+   &[data-theme="dark"] {
+      background-color: $dark-color;
+   }
+
+   &[data-theme="primary"] {
+      background-color: $primary-color;
+   }
 
    &-button {
-      width: 2rem;
-      height: 2rem;
-      line-height: 2rem;
-      flex: none;
-      border: none;
-      cursor: pointer;
+      @extend %btn-sandwich;
+      flex: 1;
+      &[data-theme="light"] {
+         background-color: $white-color;
+         .fas,
+         .far {
+            color: set-txt-color($white-color);
+         }
+         div {
+            background-color: $dark-color;
+            &::before {
+               background-color: $dark-color;
+            }
 
-      &:focus {
-         outline: none;
+            &::after {
+               background-color: $dark-color;
+            }
+         }
+      }
+      &[data-theme="dark"] {
+         background-color: $dark-color;
+         .fas,
+         .far {
+            color: set-txt-color($dark-color);
+         }
+         div {
+            background-color: $light-color;
+            &::before {
+               background-color: $light-color;
+            }
+
+            &::after {
+               background-color: $light-color;
+            }
+         }
       }
 
-      div {
-         position: relative;
-         width: 100%;
-         background-color: $dark-color;
-         height: 3px;
-
-         &:before {
-            content: "";
-            position: absolute;
-            top: -8px;
-            height: 100%;
-            width: 100%;
-            left: 0;
-            right: 0;
-            background-color: $dark-color;
+      &[data-theme="primary"] {
+         background-color: $primary-color;
+         .fas,
+         .far {
+            color: set-txt-color($primary-color);
          }
+         div {
+            background-color: $light-color;
+            &::before {
+               background-color: $light-color;
+            }
 
-         &:after {
-            content: "";
-            position: absolute;
-            bottom: -8px;
-            height: 100%;
-            width: 100%;
-            left: 0;
-            right: 0;
-            background-color: $dark-color;
+            &::after {
+               background-color: $light-color;
+            }
          }
+      }
+
+      &:hover {
+         opacity: 0.8;
       }
    }
 
+   & *:nth-child(2) {
+      flex: 2;
+   }
+
    .nav-menu {
-      display: flex;
-      float: right;
-
-      li {
-         position: relative;
+      @extend %top-nav-menu;
+      .drop-down-list {
+         @extend %drop-down-list;
       }
+   }
+}
 
-      li > a {
+.cards {
+   &-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(20%, 2fr));
+      grid-gap: 1rem;
+      padding: 1rem;
+      align-items: center;
+      transition: all 0.5s ease-in-out;
+
+      .card {
+         display: flex;
+         align-items: center;
+         justify-content: start;
+         width: 100%;
          padding: 1rem;
-         font-size: 1.5rem;
-      }
+         background-color: $light-color;
+         height: 8rem;
 
-      .selection-list {
-         display: none;
-         position: absolute;
+         .fas {
+            font-size: 4rem;
+            margin-right: 2rem;
+         }
+
+         &-details {
+            span {
+               display: block;
+               font-size: 2rem;
+               padding: 0.4rem;
+
+               &:last-child {
+                  font-size: 1rem;
+               }
+            }
+         }
       }
    }
 }

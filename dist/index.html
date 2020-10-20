@@ -8,18 +8,18 @@
       <title>App Stack | Dashboard Default</title>
    </head>
    <body>
-      <div id="main-wrapper" class="flex-row">
-         <section id="side-bar" class="side-bar active-side-bar">
+      <div id="main-wrapper" class="flex-row" data-theme="light">
+         <section id="side-bar" data-role="side-bar" data-theme="dark" class="side-bar active-side-bar">
             <div class="container">
                <div class="side-bar-logo">
                   <div class="logo"><i class="fas fa-cube"></i> AppStack</div>
                </div>
-               <h2>Pages</h2>
+               <h2 class="side-bar-section-title">Pages</h2>
                <ul class="side-bar-item">
                   <li>
                      <a href="#Dashboard">
                         <i class="fas fa-sliders-h"></i>Dashboards
-                        <span class="notify opacity-1 bg-primary">5</span>
+                        <span class="notify opacity-1 bg-info">5</span>
                         <i class="fas fa-angle-down"></i>
                      </a>
                      <ul class="side-bar-item-list">
@@ -36,7 +36,7 @@
                   <li>
                      <a href="#Pages">
                         <i class="fas fa-pager"></i>Pages
-                        <span class="notify opacity-1 bg-primary">5</span>
+                        <span class="notify opacity-1 bg-info">5</span>
                         <i class="fas fa-angle-down"></i>
                      </a>
                      <ul class="side-bar-item-list">
@@ -82,11 +82,10 @@
                   <li>
                      <a href="#layouts">
                         <i class="fas fa-desktop"></i>Laypouts
-                        <!-- <span class="notify opacity-1 bg-primary">5</span> -->
                         <i class="fas fa-angle-down"></i>
                      </a>
                      <ul class="side-bar-item-list">
-                        <li><a href="#SignIn">Sticky Slider</a></li>
+                        <li><a href="#SignIn" onclick="handleStickySideBar()">Sticky Slider</a></li>
                         <li><a href="#collapsedSidebar">Collapsed Sidebar</a></li>
                         <li><a href="#boxedLayout">Boxed Layout</a></li>
                         <li><a href="#classic">Clasic Theme</a></li>
@@ -98,7 +97,6 @@
                   <li>
                      <a href="#layouts">
                         <i class="fas fa-book-open"></i>Documentation
-                        <!-- <span class="notify opacity-1 bg-primary">5</span> -->
                         <i class="fas fa-angle-down"></i>
                      </a>
                      <ul class="side-bar-item-list">
@@ -114,9 +112,7 @@
                      </ul>
                   </li>
                </ul>
-
-               <h2>Tools & Components</h2>
-
+               <h2 class="side-bar-section-title">Tools & Components</h2>
                <ul class="side-bar-item">
                   <li>
                      <a href="#UIEements">
@@ -140,7 +136,6 @@
                      </ul>
                   </li>
                </ul>
-
                <ul class="side-bar-item">
                   <li>
                      <a href="#UIEements">
@@ -168,7 +163,6 @@
                      </ul>
                   </li>
                </ul>
-
                <ul class="side-bar-item">
                   <li>
                      <a href="#tables">
@@ -177,9 +171,7 @@
                      </a>
                   </li>
                </ul>
-
-               <h2>Plugins & Addons</h2>
-
+               <h2 class="side-bar-section-title">Plugins & Addons</h2>
                <ul class="side-bar-item">
                   <li>
                      <a href="#UIEements">
@@ -195,7 +187,6 @@
                      </ul>
                   </li>
                </ul>
-
                <ul class="side-bar-item">
                   <li>
                      <a href="#UIEements">
@@ -211,7 +202,6 @@
                      </ul>
                   </li>
                </ul>
-
                <ul class="side-bar-item">
                   <li>
                      <a href="#UIEements">
@@ -225,7 +215,6 @@
                      </ul>
                   </li>
                </ul>
-
                <ul class="side-bar-item">
                   <li>
                      <a href="#notifications">
@@ -234,7 +223,6 @@
                      </a>
                   </li>
                </ul>
-
                <ul class="side-bar-item">
                   <li>
                      <a href="#map">
@@ -249,7 +237,6 @@
                      </ul>
                   </li>
                </ul>
-
                <ul class="side-bar-item">
                   <li>
                      <a href="#notifications">
@@ -261,34 +248,109 @@
             </div>
          </section>
 
-         <header>
-            <nav id="top-nav">
-               <button id="top-nav-button" class="light-btn">
-                  <div></div>
-               </button>
+         <main id="main-wrapper">
+            <header>
+               <nav id="top-nav" data-theme="light" class="top-nav">
+                  <button id="top-nav-button" data-theme="light" class="top-nav-button">
+                     <div></div>
+                  </button>
 
-               <div class="input-group">
-                  <input type="text" placeholder="Search Project" class="dark-input" />
+                  <div class="input-group">
+                     <input type="text" placeholder="Search Project" class="input-light" />
+                  </div>
+
+                  <ul class="nav-menu">
+                     <li>
+                        <a href=""> <i class="far fa-comment"></i></a>
+                     </li>
+                     <li>
+                        <a href=""> <i class="far fa-bell-slash"></i></a>
+                     </li>
+                     <li>
+                        <a href="">
+                           <div class="image-container-rounded"><img src="https://www.countryflags.io/US/flat/64.png" alt="be" /></div>
+                        </a>
+                        <ul class="drop-down-list">
+                           <li>
+                              <a href="">
+                                 <div class="image-container-rounded"><img src="https://www.countryflags.io/gr/flat/64.png" alt="be" /></div>
+                                 GR
+                              </a>
+                           </li>
+                           <li>
+                              <a href="">
+                                 <div class="image-container-rounded"><img src="https://www.countryflags.io/De/flat/64.png" alt="al" /></div>
+                                 DE
+                              </a>
+                           </li>
+                           <li>
+                              <a href=""
+                                 ><div class="image-container-rounded"><img src="https://www.countryflags.io/US/flat/64.png" alt="be" /></div>
+                                 US
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <!-- <a href=""></a> -->
+                        <!-- <span> -->
+                        <div class="user-info" data-role="user-info">
+                           <div class="image-user-container-rounded">
+                              <img
+                                 src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+                                 alt="user"
+                              />
+                           </div>
+                           <span class="user-info-name">Nick Karvounis</span>
+                           <i class="fas fa-angle-down"></i>
+
+                           <ul class="user-info-settings" data-active="false">
+                              <li>
+                                 <a href="mailto:nick@something.com"><span class="user-info-settings-email">nick@something.com</span> </a>
+                              </li>
+                              <li>
+                                 <a href=""><span class="user-info-settings-options">Options</span> </a>
+                              </li>
+                              <li>
+                                 <a href=""><span class="user-info-settings-singOut">Sign Out</span> </a>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- </span> -->
+                     </li>
+                  </ul>
+               </nav>
+            </header>
+
+            <section id="cards" class="cards">
+               <div class="cards-content">
+                  <div class="card">
+                     <i class="fas fa-shopping-cart txt-danger"></i>
+                     <div class="card-details">
+                        <span class="card-result">2.562</span>
+                        <span class="card-description">Sales</span>
+                     </div>
+                  </div>
+
+                  <div class="card">
+                     <i class="fas fa-chart-line txt-warning"></i>
+                     <div class="card-details">
+                        <span class="card-result">2.562</span>
+                        <span class="card-description">Visitors</span>
+                     </div>
+                  </div>
+
+                  <div class="card">
+                     <i class="fas fa-pound-sign txt-success"></i>
+                     <div class="card-details">
+                        <span class="card-result">12.562</span>
+                        <span class="card-description">Ernings</span>
+                     </div>
+                  </div>
                </div>
-
-               <ul class="nav-menu">
-                  <li>
-                     <a href=""> <i class="far fa-comment"></i></a>
-                  </li>
-                  <li>
-                     <a href=""> <i class="far fa-bell-slash"></i></a>
-                  </li>
-                  <li>
-                     <div class="image-container-rounded"><img src="https://www.countryflags.io/US/flat/64.png" alt="be" /></div>
-                     <ul class="selection-list">
-                        <li><img src="https://www.countryflags.io/gr/flat/64.png" alt="be" /></li>
-                        <li><img src="https://www.countryflags.io/AL/flat/64.png" alt="be" /></li>
-                        <li><img src="https://www.countryflags.io/US/flat/64.png" alt="be" /></li>
-                     </ul>
-                  </li>
-               </ul>
-            </nav>
-         </header>
+            </section>
+         </main>
       </div>
 
       <script src="./js/navigationHandlers.js"></script>

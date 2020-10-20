@@ -9,9 +9,185 @@
    line-height: 0.85rem;
 }
 
-.flex-row {
+%btn-sandwich {
+   width: 2rem;
+   height: 2rem;
+   padding: 0.2rem;
+   flex: none;
+   border: none;
+   cursor: pointer;
+   box-sizing: border-box;
+   transition: all 0.5s ease-in-out;
+
+   &:focus {
+      outline: none;
+      opacity: 0.9;
+   }
+
+   div {
+      position: relative;
+      width: 100%;
+      padding: 2px 0;
+      box-sizing: border-box;
+      border-radius: 10px;
+      transition: all 0.5s ease-in-out;
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0.5rem;
+         padding: 2px 0;
+         width: 100%;
+         left: 0;
+         right: 0;
+         box-sizing: border-box;
+         border-radius: 10px;
+         transition: all 0.5s ease-in-out;
+      }
+
+      &::after {
+         content: "";
+         position: absolute;
+         top: -0.5rem;
+         padding: 2px 0;
+         width: 100%;
+         left: 0;
+         right: 0;
+         box-sizing: border-box;
+         border-radius: 10px;
+         transition: all 0.5s ease-in-out;
+      }
+   }
+}
+
+%main-wrapper {
+   min-height: 100vh;
+   transition: width 0.5s ease-in-out;
+   overflow-x: hidden;
+   right: 0;
+}
+
+%side-bar {
+   position: relative;
+   width: 20rem;
+   min-width: 20rem;
+   height: auto;
+   min-height: 100%;
+   transition: margin 0.5s ease-in-out;
+}
+
+%side-bar-section-title {
+   font-size: 0.85rem;
+   font-weight: 400;
+   margin: 0.5rem 0;
+}
+
+%side-bar-logo {
    display: flex;
-   flex-direction: row;
+   align-items: center;
+   justify-content: start;
+   padding: 2rem 0;
+   font-size: 1.4rem;
+   .fas,
+   img {
+      width: auto;
+      margin-right: 1rem;
+      color: $primary-color;
+      font-size: 1.7rem;
+   }
+}
+
+%side-bar-button {
+   display: flex;
+   align-items: center;
+   padding: 0.9rem 0;
+   position: relative;
+   color: $light-gray-color;
+   font-size: 1rem;
+   transition: all 0.5s ease-in-out;
+
+   &:focus {
+      outline: none;
+   }
+}
+
+%top-nav {
+   width: 100%;
+   padding: 0.5rem 1rem;
+   display: flex;
+   align-items: center;
+}
+
+%top-nav-menu {
+   display: flex;
+   align-items: center;
+
+   li {
+      position: relative;
+   }
+
+   & * > a,
+   & * > span,
+   & * > button {
+      position: relative;
+      border: none;
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.25rem;
+      line-height: 1rem;
+
+      &:hover {
+         opacity: 0.8;
+      }
+   }
+}
+
+%input {
+   padding: 0.5rem 1rem;
+   border: none;
+   transition: border 0.5s ease-in-out;
+}
+
+%drop-down-list {
+   display: none !important;
+   position: absolute !important;
+   padding: 0.5rem;
+   width: 10rem;
+   top: 100%;
+   background-color: $light-color;
+   right: 0;
+   display: block;
+   box-shadow: 0 0 5px $light-gray-color;
+
+   li,
+   span {
+      border-radius: 10px;
+      display: block;
+      transition: all 0.5s ease-in-out;
+      a {
+         padding: 0.3rem;
+         font-size: 1rem;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+      }
+
+      &:hover {
+         background-color: $light-gray-primary-color;
+         // opacity: 0.5;s
+      }
+   }
+}
+
+.flex {
+   &-row {
+      display: flex;
+      flex-direction: row;
+   }
+   &-column {
+      display: flex;
+      flex-direction: column;
+   }
 }
 
 .notify {
@@ -33,80 +209,81 @@
    opacity: 0;
 }
 
-.bg-primary {
-   background-color: $primary-color;
-   color: set-txt-color($primary-color);
-}
-
-.bg-secondary {
-   background-color: $secondary-color;
-   color: set-txt-color($secondary-color);
-}
-
-.bg-gray {
-   background-color: $gray-color;
-   color: set-txt-color($gray-color);
-}
-
-.bg-light {
-   background-color: $light-color;
-   color: set-txt-color($light-color);
-}
-
-.light-btn {
-   background-color: $white-color !important;
-
-   div {
-      background-color: $dark-color !important;
-      &:before {
-         background-color: $dark-color !important;
-      }
-
-      &:after {
-         background-color: $dark-color !important;
-      }
+.btn,
+.bg {
+   &-primary {
+      background-color: $primary-color;
+      color: set-txt-color($primary-color);
    }
 
-   &:hover {
-      div {
-         background-color: $primary-color !important;
-         &:before {
-            background-color: $primary-color !important;
-         }
+   &-secondary {
+      background-color: $secondary-color;
+      color: set-txt-color($secondary-color);
+   }
 
-         &:after {
-            background-color: $primary-color !important;
-         }
-      }
+   &-success {
+      background-color: $success-color;
+      color: set-txt-color($success-color);
+   }
+
+   &-warning {
+      background-color: $warning-color;
+      color: set-txt-color($warning-color);
+   }
+
+   &-danger {
+      background-color: $danger-color;
+      color: set-txt-color($danger-color);
+   }
+
+   &-info {
+      background-color: $info-color;
+      color: set-txt-color($info-color);
+   }
+
+   &-gray {
+      background-color: $gray-color;
+      color: set-txt-color($gray-color);
+   }
+
+   &-dark {
+      background-color: $dark-color;
+      color: set-txt-color($dark-color);
    }
 }
 
-.dark-btn {
-   background-color: $dark-color;
-
-   div {
-      background-color: $light-color !important;
-      &:before {
-         background-color: $light-color !important;
-      }
-
-      &:after {
-         background-color: $dark-color !important;
-      }
+.txt {
+   &-primary {
+      color: $primary-color;
    }
 
-   &:hover {
-      // background-color: $primary-color !important;
-      div {
-         background-color: $secondary-color !important;
-         &:before {
-            background-color: $secondary-color !important;
-         }
+   &-secondary {
+      color: $secondary-color;
+      color: set-txt-color($secondary-color);
+   }
 
-         &:after {
-            background-color: $secondary-color !important;
-         }
-      }
+   &-success {
+      color: $success-color;
+   }
+
+   &-warning {
+      color: $warning-color;
+   }
+
+   &-danger {
+      color: $danger-color;
+   }
+
+   &-info {
+      color: $info-color;
+   }
+
+   &-gray {
+      color: $gray-color;
+   }
+
+   &-dark {
+      color: $dark-color;
    }
 }
 
@@ -142,37 +319,153 @@
    }
 }
 
-.dark-input {
-   border-bottom: 1px solid $dark-color !important;
-   &:focus {
-      outline: none;
-      border-color: $primary-color !important;
-   }
-}
-
 .input-group {
    padding: 0.2rem;
-   margin-left: 1rem;
+   margin-left: 2rem;
 
    input {
-      padding: 0.5rem 1rem;
-      border: none;
+      @extend %input;
    }
 }
 
-.image-container-rounded {
-   position: relative;
-   width: 30px;
-   height: 30px;
-   border-radius: 50%;
-   overflow: hidden;
+.input {
+   &-dark {
+      background-color: $dark-color;
+      border-bottom: 1px solid $dark-color !important;
+      &:focus {
+         outline: none;
+         border-color: $primary-color !important;
+      }
 
-   img {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      left: -15px;
-      top: -15px;
+      &::-webkit-input-placeholder,
+      &:-ms-input-placeholder,
+      &::placeholder {
+         color: set-txt-color($dark-color);
+      }
+   }
+
+   &-light {
+      background-color: $light-color;
+      border-bottom: 1px solid $light-color !important;
+      &:focus {
+         outline: none;
+         border-color: $primary-color !important;
+      }
+
+      &::-webkit-input-placeholder,
+      &:-ms-input-placeholder,
+      &::placeholder {
+         color: set-txt-color($light-color);
+      }
+   }
+
+   &-primary {
+      background-color: $primary-color;
+      border-bottom: 1px solid $primary-color !important;
+      &:focus {
+         outline: none;
+         border-color: $secondary-color !important;
+      }
+
+      &::-webkit-input-placeholder,
+      &:-ms-input-placeholder,
+      &::placeholder {
+         color: set-txt-color($primary-color);
+      }
+   }
+}
+
+.image {
+   &-container-rounded {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+         position: absolute;
+         width: 45px;
+         height: 45px;
+         object-fit: cover;
+         left: -12.5px;
+         top: -12.5px;
+      }
+   }
+
+   &-user-container-rounded {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+         position: absolute;
+         width: 50px;
+         height: 50px;
+         object-fit: cover;
+         left: -5px;
+         top: -5px;
+      }
+   }
+}
+
+.drop-down-list {
+   display: none !important;
+   @extend %drop-down-list;
+}
+
+.user-info {
+   display: flex !important;
+   padding: 0.5rem;
+   align-items: center;
+   position: relative;
+   cursor: pointer;
+
+   &.active {
+      .fas {
+         transform: rotate(-180deg);
+      }
+   }
+
+   &:hover {
+      background-color: $light-gray-primary-color;
+   }
+
+   &-name {
+      font-size: 0.8rem !important;
+      padding: 0.3rem !important;
+   }
+
+   &-settings {
+      width: 15rem;
+      @extend %drop-down-list;
+      padding: 0.5rem;
+
+      &[data-active="true"] {
+         display: block !important;
+      }
+
+      a {
+         padding: 0 !important;
+      }
+      span {
+         font-size: 1rem !important;
+      }
+      // right: 0;
+      // width: 100%;
+      // padding: 1rem;
+      // position: absolute !important;
+      // display: block !important;
+      // li {
+      //    display: block;
+
+      //    a,
+      //    span {
+      //       padding: ;
+      //       font-size: 1rem;
+      //    }
+      // };
    }
 }
