@@ -1,371 +1,440 @@
 @import "variables";
 @import "utilities";
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
+   font-family: Arial, sans-serif;
 }
 
 h2,
 h3,
 h4 {
-  font-size: 2rem;
+   font-size: 2rem;
 }
 
 ul {
-  list-style: none;
+   list-style: none;
 }
 
 a,
 button {
-  border: none;
-  display: block;
-  text-decoration: none;
-  color: $gray-color;
+   border: none;
+   display: block;
+   text-decoration: none;
+   color: $gray-color;
 
-  &:focus {
-    outline: none;
-  }
+   &:focus {
+      outline: none;
+   }
 }
+
 img {
-  width: 100%;
+   width: 100%;
 }
 
 #main-wrapper-right {
-  width: 100%;
-  overflow-x: auto;
+   width: 100%;
+   overflow-x: auto;
+   position: relative;
 }
 
 #main-wrapper {
-  width: 100%;
-  //   min-width: fit-content;
-  &[data-theme="dark"] {
-    background-color: $light-gray-color;
-  }
+   width: 100%;
+   //   min-width: fit-content;
+   &[data-theme="dark"] {
+      background-color: $light-gray-color;
+   }
 
-  &[data-theme="light"] {
-    background-color: $light-gray-primary-color;
-  }
-  @extend %main-wrapper;
-  &.sticky {
-    overflow-y: auto;
-    height: 100vh;
-  }
+   &[data-theme="light"] {
+      background-color: $light-gray-primary-color;
+   }
+   @extend %main-wrapper;
+   &.sticky {
+      overflow-y: auto;
+      height: 100vh;
+   }
 }
 
 .side-bar {
-  &[data-theme="dark"] {
-    @extend %side-bar;
-    background-color: $dark-color;
+   &[data-theme="dark"] {
+      @extend %side-bar;
+      background-color: $dark-color;
 
-    .logo {
-      color: $light-color !important;
-    }
-
-    .side-bar-section-title {
-      @extend %side-bar-section-title;
-      color: $light-gray-color;
-    }
-
-    &.toggled {
-      margin-left: -20rem;
-    }
-
-    &.toggled > .media-main-user {
-      margin-left: -20rem;
-    }
-
-    &.sticky {
-      overflow: auto;
-      height: 100vh;
-    }
-  }
-
-  &[data-theme="light"] {
-    @extend %side-bar;
-    background-color: $light-color;
-
-    .logo {
-      color: $dark-color;
-    }
-
-    .side-bar-section-title {
-      @extend %side-bar-section-title;
-      color: $dark-color;
-    }
-
-    &.toggled {
-      margin-left: -20rem;
-    }
-
-    &.toggled > .media-main-user {
-      margin-left: -20rem;
-    }
-
-    &.sticky {
-      overflow: auto;
-      height: 100vh;
-    }
-  }
-
-  &-logo {
-    display: block;
-
-    .logo {
-      @extend %side-bar-logo;
-    }
-  }
-
-  &-item {
-    position: relative;
-    li > a {
-      @extend %side-bar-button;
-      .fas,
-      .far {
-        color: $gray-color;
-        transition: transform 0.3s ease-in-out;
+      .logo {
+         color: $light-color !important;
       }
 
-      .far:first-child,
-      .fas:first-child {
-        margin-right: 0.8rem;
-        font-size: 1.4rem;
+      .side-bar-section-title {
+         @extend %side-bar-section-title;
+         color: $light-gray-color;
       }
 
-      .fas:last-child {
-        position: absolute;
-        right: 0;
-        margin-right: 1rem;
+      &.toggled {
+         margin-left: -20rem;
       }
 
-      &.current,
-      &.current-2 {
-        color: $light-color;
-        .fas:last-child {
-          color: $light-color;
-          transform: rotate(-180deg) !important;
-        }
-        .fas:first-child {
-          color: $light-color;
-        }
+      &.toggled > .media-main-user {
+         margin-left: -20rem;
       }
 
-      &:focus,
-      &:hover,
-      &:focus .fas:last-child,
-      &:hover .fas:last-child,
-      &:hover .fas:first-child,
-      &:hover .far:first-child,
-      &:focus .far:first-child,
-      &:focus .fas:first-child {
-        color: $light-color;
+      &.sticky {
+         overflow: auto;
+         height: 100vh;
       }
-    }
+   }
 
-    &-list {
+   &[data-theme="light"] {
+      @extend %side-bar;
+      background-color: $light-color;
+
+      .logo {
+         color: $dark-color;
+      }
+
+      .side-bar-section-title {
+         @extend %side-bar-section-title;
+         color: $dark-color;
+      }
+
+      &.toggled {
+         margin-left: -20rem;
+      }
+
+      &.toggled > .media-main-user {
+         margin-left: -20rem;
+      }
+
+      &.sticky {
+         overflow: auto;
+         height: 100vh;
+      }
+   }
+
+   &-logo {
       display: block;
-      overflow: hidden;
-      height: 0;
-      max-height: 0px;
-      min-height: 0px;
-      transition: min-height 0.5s ease, max-height 0.5s ease,
-        padding-left 0.5s ease;
 
-      &.active-side-1 {
-        padding-left: 2.1rem;
-        height: auto;
-        max-height: 30rem;
-        min-height: 5rem;
-        transition: max-height 0.5s ease, min-height 0.5s ease,
-          padding-left 0.5s ease;
+      .logo {
+         @extend %side-bar-logo;
+      }
+   }
+
+   &-item {
+      position: relative;
+      li > a {
+         @extend %side-bar-button;
+         .fas,
+         .far {
+            color: $gray-color;
+            transition: transform 0.3s ease-in-out;
+         }
+
+         .far:first-child,
+         .fas:first-child {
+            margin-right: 0.8rem;
+            font-size: 1.4rem;
+         }
+
+         .fas:last-child {
+            position: absolute;
+            right: 0;
+            margin-right: 1rem;
+         }
+
+         &.current,
+         &.current-2 {
+            color: $light-color;
+            .fas:last-child {
+               color: $light-color;
+               transform: rotate(-180deg) !important;
+            }
+            .fas:first-child {
+               color: $light-color;
+            }
+         }
+
+         &:focus,
+         &:hover,
+         &:focus .fas:last-child,
+         &:hover .fas:last-child,
+         &:hover .fas:first-child,
+         &:hover .far:first-child,
+         &:focus .far:first-child,
+         &:focus .fas:first-child {
+            color: $light-color;
+         }
       }
 
-      ul {
-        display: block;
-        overflow: hidden;
-        height: 0;
-        max-height: 0px;
-        min-height: 0px;
-        transition: min-height 0.5s ease, max-height 0.5s ease,
-          padding-left 0.5s ease;
+      &-list {
+         display: block;
+         overflow: hidden;
+         height: 0;
+         max-height: 0px;
+         min-height: 0px;
+         transition: min-height 0.5s ease, max-height 0.5s ease, padding-left 0.5s ease;
 
-        &.active-side-2 {
-          padding-left: 0.5rem;
-          height: auto;
-          max-height: 20rem;
-          min-height: 2rem;
-          transition: max-height 0.5s ease, min-height 0.5s ease,
-            padding-left 0.5s ease;
-        }
+         &.active-side-1 {
+            padding-left: 2.1rem;
+            height: auto;
+            max-height: 30rem;
+            min-height: 5rem;
+            transition: max-height 0.5s ease, min-height 0.5s ease, padding-left 0.5s ease;
+         }
+
+         ul {
+            display: block;
+            overflow: hidden;
+            height: 0;
+            max-height: 0px;
+            min-height: 0px;
+            transition: min-height 0.5s ease, max-height 0.5s ease, padding-left 0.5s ease;
+
+            &.active-side-2 {
+               padding-left: 0.5rem;
+               height: auto;
+               max-height: 20rem;
+               min-height: 2rem;
+               transition: max-height 0.5s ease, min-height 0.5s ease, padding-left 0.5s ease;
+            }
+         }
       }
-    }
-  }
+   }
 }
 
 .top-nav {
-  @extend %top-nav;
-  &[data-theme="light"] {
-    background-color: $white-color;
-  }
-
-  &[data-theme="dark"] {
-    background-color: $dark-color;
-  }
-
-  &[data-theme="primary"] {
-    background-color: $primary-color;
-  }
-
-  &-button {
-    @extend %btn-sandwich;
-    //  flex: 1;
-    &[data-theme="light"] {
+   @extend %top-nav;
+   &[data-theme="light"] {
       background-color: $white-color;
-      .fas,
-      .far {
-        color: set-txt-color($white-color);
-      }
-      div {
-        background-color: $dark-color;
-        &::before {
-          background-color: $dark-color;
-        }
+   }
 
-        &::after {
-          background-color: $dark-color;
-        }
-      }
-    }
-    &[data-theme="dark"] {
+   &[data-theme="dark"] {
       background-color: $dark-color;
-      .fas,
-      .far {
-        color: set-txt-color($dark-color);
-      }
-      div {
-        background-color: $light-color;
-        &::before {
-          background-color: $light-color;
-        }
+   }
 
-        &::after {
-          background-color: $light-color;
-        }
-      }
-    }
-
-    &[data-theme="primary"] {
+   &[data-theme="primary"] {
       background-color: $primary-color;
-      .fas,
-      .far {
-        color: set-txt-color($primary-color);
+   }
+
+   &-button {
+      @extend %btn-sandwich;
+      //  flex: 1;
+      &[data-theme="light"] {
+         background-color: $white-color;
+         .fas,
+         .far {
+            color: set-txt-color($white-color);
+         }
+         div {
+            background-color: $dark-color;
+            &::before {
+               background-color: $dark-color;
+            }
+
+            &::after {
+               background-color: $dark-color;
+            }
+         }
       }
-      div {
-        background-color: $light-color;
-        &::before {
-          background-color: $light-color;
-        }
+      &[data-theme="dark"] {
+         background-color: $dark-color;
+         .fas,
+         .far {
+            color: set-txt-color($dark-color);
+         }
+         div {
+            background-color: $light-color;
+            &::before {
+               background-color: $light-color;
+            }
 
-        &::after {
-          background-color: $light-color;
-        }
+            &::after {
+               background-color: $light-color;
+            }
+         }
       }
-    }
 
-    &:hover {
-      opacity: 0.8;
-    }
-  }
+      &[data-theme="primary"] {
+         background-color: $primary-color;
+         .fas,
+         .far {
+            color: set-txt-color($primary-color);
+         }
+         div {
+            background-color: $light-color;
+            &::before {
+               background-color: $light-color;
+            }
 
-  & *:nth-child(2) {
-    flex: 2;
-  }
+            &::after {
+               background-color: $light-color;
+            }
+         }
+      }
 
-  .input-group {
-    display: none;
+      &:hover {
+         opacity: 0.8;
+      }
+   }
 
-    @media (min-width: 988px) {
-      display: block;
-    }
-  }
+   & *:nth-child(2) {
+      flex: 2;
+   }
 
-  .nav-menu {
-    @extend %top-nav-menu;
-    .drop-down-list {
-      @extend %drop-down-list;
-    }
-  }
+   .input-group {
+      display: none;
+
+      @media (min-width: 988px) {
+         display: block;
+      }
+   }
+
+   .nav-menu {
+      @extend %top-nav-menu;
+      .drop-down-list {
+         @extend %drop-down-list;
+      }
+   }
 }
 
 .media-main-user {
-  width: 20rem;
-  height: 5rem;
-  position: fixed;
-  padding: 0.5rem;
-  left: 0;
-  bottom: 0;
-  z-index: 10;
-  background-color: $dark-color;
-  color: #fff !important;
-  box-shadow: 0 -1px 11px -5px #000;
-  transition: margin 0.5s ease-in-out;
+   width: 20rem;
+   height: 5rem;
+   position: fixed;
+   padding: 0.5rem;
+   left: 0;
+   bottom: 0;
+   z-index: 10;
+   background-color: $dark-color;
+   color: #fff !important;
+   box-shadow: 0 -1px 11px -5px #000;
+   transition: margin 0.5s ease-in-out;
 }
 
 .cards {
-  &-content {
-    min-width: 10rem;
-    //  grid-template-columns: repeat(auto-fill, minmax(20%, 2fr));
-    grid-gap: 1rem;
-    padding: 1rem;
-    align-items: center;
-    transition: all 0.5s ease-in-out;
-  }
+   &-content {
+      min-width: 10rem;
+      grid-gap: 1rem;
+      padding: 1rem 0;
+      align-items: center;
+      transition: all 0.5s ease-in-out;
+   }
+
+   .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      justify-self: center;
+      width: 100%;
+      align-self: center;
+      flex-wrap: wrap;
+      min-width: 10rem;
+      padding: 0.8rem;
+      background-color: $light-color;
+      border-left: 1px solid $primary-color;
+      height: 100%;
+
+      &-item {
+         width: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: space-evenly;
+         height: 50%;
+      }
+
+      .fas,
+      .far {
+         font-size: 2.5rem;
+      }
+
+      &-details {
+         > * {
+            display: block;
+            font-size: 1.5rem;
+            padding: 0.4rem;
+
+            &:first-child {
+               font-size: 0.7rem;
+            }
+         }
+      }
+   }
 }
 
-.card {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  justify-self: center;
-  width: 100%;
-  align-self: center;
-  flex-wrap: wrap;
-  //   max-width: 20rem;
-  min-width: 10rem;
-  padding: 0.8rem;
-  background-color: $light-color;
+.control-box {
+   padding-top: 0.5rem;
+   &-buttons {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1rem;
 
-  .fas,
-  .far {
-    font-size: 3rem;
-  }
-
-  &-details {
-    span {
-      display: block;
-      font-size: 2rem;
-      padding: 0.4rem;
-
-      &:last-child {
-        font-size: 0.8rem;
+      > * {
+         margin-right: 0.5rem;
       }
-    }
-  }
+      &[data-theme="light"] {
+         background-color: $light-color;
+         color: $dark-color;
+      }
+
+      &[data-theme="dark"] {
+         background-color: $dark-color;
+         color: $light-color;
+      }
+
+      &[data-theme="primary"] {
+         background-color: $dark-color;
+         color: $light-color;
+      }
+
+      button {
+         @extend %btn;
+      }
+   }
+
+   &-description {
+      font-weight: bold;
+   }
 }
 
 .chart {
-  background-color: $light-color;
-  width: 100%;
-  min-height: 50rem;
-  resize: both;
-  overflow: auto;
+   background-color: $light-color;
+   width: 50%;
+   height: 20rem;
 
-  canvas {
-    width: 100%;
-    height: 100%;
-  }
+   //  min-height: 50rem;
+   resize: both;
+   //  overflow: auto;
+
+   canvas {
+      padding: 1rem;
+      // width: 100%;
+      // height: 100%;
+   }
+}
+
+#footer {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   padding: 1rem;
+   display: flex;
+
+   //  margin-top: 100%;
+   &[data-theme="light"] {
+      background-color: $light-color;
+      color: $dark-color;
+   }
+
+   &[data-theme="dark"] {
+      background-color: $dark-color;
+      color: $light-color;
+   }
+
+   &[data-theme="primary"] {
+      background-color: $dark-color;
+      color: $light-color;
+   }
 }
