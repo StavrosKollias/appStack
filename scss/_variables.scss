@@ -15,9 +15,23 @@ $status-progress-color: #f0ad4e;
 $status-calceled-color: #d9534f;
 
 @function set-txt-color($color) {
-   @if (lightness($color) >30) {
-      @return $white-color;
-   } @else {
-      @return $dark-color;
-   }
+  @if (lightness($color) >30) {
+    @return $white-color;
+  } @else {
+    @return $dark-color;
+  }
+}
+
+@function set-grid-template-colums(
+  $fill,
+  $min,
+  $max,
+  $minmax: true,
+  $repeat: true
+) {
+  @if $minmax {
+    @return repeat($fill, minmax($min, $max));
+  } @else {
+    @return $max;
+  }
 }

@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script
       src="https://kit.fontawesome.com/cb82fdc551.js"
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/main.css" />
-    <title>App Stack | Dashboard Default</title>
+    <title>App Stack | Responsive Table</title>
   </head>
   <body>
     <div id="main-wrapper" class="flex-row" data-theme="light">
@@ -40,6 +39,7 @@
               </ul>
             </li>
           </ul>
+
           <ul class="side-bar-item">
             <li>
               <a href="#Pages">
@@ -221,7 +221,6 @@
                 <i class="fas fa-angle-down"></i>
               </a>
               <ul class="side-bar-item-list">
-                <li><a href="responsivetable.html">Responsive-Table</a></li>
                 <li><a href="#pagination">Pagination</a></li>
                 <li><a href="#rowSelection">Row Selection</a></li>
                 <li><a href="#expandable Rows">Expandable Rows</a></li>
@@ -273,27 +272,9 @@
             </li>
           </ul>
         </div>
-
-        <section id="media-main-user" class="media-main-user">
-          <div class="user-info">
-            <div class="image-user-container-rounded-m">
-              <img
-                src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
-                alt="user"
-              />
-            </div>
-            <div class="user-details">
-              <span class="user-info-name">Nick Karvounis</span>
-              <span class="bg-sucess"
-                ><i class="far fa-check-circle bg-success"></i>
-                <span>Online</span></span
-              >
-            </div>
-          </div>
-        </section>
       </section>
 
-      <main id="main-wrapper-right">
+      <main id="main-wrapper">
         <header>
           <nav id="top-nav" data-theme="light" class="top-nav">
             <button
@@ -405,72 +386,10 @@
             </ul>
           </nav>
         </header>
-
-        <section id="cards" class="cards">
-          <div class="line" id="line-section" data-txt="-">
-            <button class="btn-success">-</button>
-          </div>
-          <div class="container">
-            <div class="cards-content grid-grid-template">
-              <div class="card">
-                <i class="far fa-clock txt-warning"></i>
-                <div class="card-details">
-                  <span class="card-result">10''</span>
-                  <span class="card-description">Run Time</span>
-                </div>
-
-                <div class="card-details">
-                  <span class="card-result">10''</span>
-                  <span class="card-description">Run Time</span>
-                </div>
-              </div>
-
-              <div class="card">
-                <i class="fas fa-chart-line txt-success"></i>
-                <div class="card-details">
-                  <span class="card-result">150 &#8451;</span>
-                  <span class="card-description">AVG Temperature</span>
-                </div>
-              </div>
-
-              <div class="card">
-                <i class="fas fa-chart-line txt-success"></i>
-                <div class="card-details">
-                  <span class="card-result">150 &#8451;</span>
-                  <span class="card-description">Max Temperature</span>
-                </div>
-              </div>
-
-              <div class="card">
-                <i class="fas fa-angle-double-down txt-danger"></i>
-                <div class="card-details">
-                  <span class="card-result">12.5 &#8451;</span>
-                  <span class="card-description">Loss Temperature</span>
-                </div>
-              </div>
-
-              <div class="card">
-                <i class="fas fa-chart-area txt-danger"></i>
-                <div class="card-details">
-                  <span class="card-result">12</span>
-                  <span class="card-description">PWI</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="chart-container" class="chart-container">
-          <div class="container">
-            <div class="chart">
-              <canvas id="temperature-chart"></canvas>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
 
     <script src="./js/navigationHandlers.js"></script>
-    <script src="./js/chartgenerator.js"></script>
+    <script src="./js/tables.js"></script>
   </body>
 </html>
