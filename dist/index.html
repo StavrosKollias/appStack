@@ -10,7 +10,7 @@
    </head>
    <body>
       <div id="main-wrapper" class="flex-row" data-theme="light">
-         <section id="side-bar" data-role="side-bar" data-theme="dark" class="side-bar active-side-bar">
+         <section id="side-bar" data-role="side-bar" data-theme="dark" class="side-bar toggled-left">
             <div class="container">
                <div class="side-bar-logo">
                   <div class="logo"><i class="fas fa-cube"></i> AppStack</div>
@@ -119,7 +119,6 @@
                   <li>
                      <a href="#UIEements">
                         <i class="fas fa-book-open"></i>UI Elements
-                        <!-- <span class="notify opacity-1 bg-primary">5</span> -->
                         <i class="fas fa-angle-down"></i>
                      </a>
                      <ul class="side-bar-item-list">
@@ -346,7 +345,6 @@
                </nav>
             </header>
 
-
             <section id="control-box" class="control-box" >
               <div class="container">
                 <div class="control-box-buttons" data-theme="light">
@@ -357,28 +355,44 @@
                   <button class="btn-success">Connect</button>
                   <button class="btn-primary">Download</button>
                   <button class="btn-secondary">Update</button>
+                  <button class="btn-danger"><i class="far fa-trash-alt"></i></button>
+
+                  <button class="btn-success"><i class="fas fa-pencil-alt"></i></button>
+
+                  <input type="range" class="input-range-primary" name="" id="">
+                  <input type="range" class="input-range-secondary" name="" id="">
+                  <input type="range" class="input-range-success" name="" id="">
+                  
 
                    <div class="btn-container">
                      <label for="">Trigger Manual/Temperature</label>
-                    <div class="btn-switch" tabindex="0" data-role="true">
+                    <div class="btn-switch-primary" tabindex="0" data-index="1">
                       <div></div>
                   </div>
                    </div> 
+                   <div class="btn-container">
+                     <label for="">Profiler Type</label>
+                   <select name="default-select" id="" data-role="select-theme" class="select-primary">
+                      <option value="0">6 channel</option>
+                      <option value="0">9 channel</option>
+                      <option value="0">12 channel</option>
+                   </select>
+                   </div>
+
+                   <div class="loading-bars-container">
+                      <div></div><div></div><div></div> <div></div><div></div><div></div><div></div><div></div>
+                   </div>
+
+
                  
                 </div>
               </div>
             </section>
 
-
-
-
             <section id="cards" class="cards">
-               <!-- <div class="line" id="line-section" data-txt="-">
-            <button class="btn-success">-</button>
-          </div> -->
                <div class="container">
                   <div class="cards-content grid-template">
-                     <div class="card grid-column">
+                     <div class="card grid-2-columns">
                        <div class="card-item">
                         <i class="fas fa-battery-three-quarters txt-success" id="battery-icon"></i>
                         <div class="card-details">
@@ -388,54 +402,86 @@
                        </div>
                       
                        <div class="card-item">
-                        <i class="fas fa-qrcode"></i>
+                        <i class="fas fa-qrcode txt-secondary"></i>
                         <div class="card-details">
                            <span class="card-description">S/N</span>
                            <span class="card-result">204</span>
                         </div>
                         </div>
+
+                        <div class="card-item">
+                           <i class="fas fa-wifi txt-success"></i>
+                           <div class="card-details">
+                              <span class="card-description">Connection</span>
+                              <span class="card-result">on</span>
+                           </div>
+                        </div>
+                        <div class="card-item">
+                           <i class="fas fa-check-double txt-warning"></i>
+                           <div class="card-details">
+                              <span class="card-description">Calibration</span>
+                              <span class="card-result">02/02/2019</span>
+                           </div>
+                        </div>
+
+                       
                      </div>
 
 
                      <div class="card">
-                        <i class="far fa-clock txt-warning"></i>
-                        <div class="card-details">
-                           <span class="card-description">Run Time</span>
-                           <span class="card-result">10''</span>
+
+                        <div class="card-item">
+                           <i class="far fa-clock txt-warning"></i>
+                           <div class="card-details">
+                              <span class="card-description">Run Time</span>
+                              <span class="card-result">10''</span>
+                           </div>
+                        </div>
+
+                        <div class="card-item">
+                           <i class="fas fa-list-ul  txt-warning"></i>
+                           <div class="card-details">
+                              <span class="card-description">Channels</span>
+                              <span class="card-result">6</span>
+                           </div>
+                        </div>
+                       
+                     </div>
+
+                     <div class="card grid-2-columns">
+                        <div class="card-item">
+                           <i class="fas fa-chart-line txt-success"></i>
+                           <div class="card-details">
+                              <span class="card-description">AVG Temperature</span>
+                              <span class="card-result">150 &#8451;</span>
+                           </div>
+                        </div>
+                        <div class="card-item">
+                           <i class="fas fa-chart-line txt-success"></i>
+                           <div class="card-details">
+                              <span class="card-description">Max Temperature</span>
+                              <span class="card-result"> 250 &#8451;</span>
+                           </div>
+
+                        </div>
+                        <div class="card-item">
+                           <i class="fas fa-angle-double-down txt-danger"></i>
+                           <div class="card-details">
+                              <span class="card-description">Loss Temperature</span>
+                              <span class="card-result">12.5 &#8451;</span>
+                           </div>
+                        </div>
+                        <div class="card-item">
+                           <i class="fas fa-chart-area txt-danger"></i>
+                           <div class="card-details">
+                              <span class="card-description">PWI</span>
+                              <span class="card-result">12</span>
+                           </div>
                         </div>
                      </div>
 
-                     <div class="card">
-                        <i class="fas fa-chart-line txt-success"></i>
-                        <div class="card-details">
-                           <span class="card-description">AVG Temperature</span>
-                           <span class="card-result">150 &#8451;</span>
-                        </div>
-                     </div>
 
-                     <div class="card">
-                        <i class="fas fa-chart-line txt-success"></i>
-                        <div class="card-details">
-                           <span class="card-description">Max Temperature</span>
-                           <span class="card-result"> &#8451;</span>
-                        </div>
-                     </div>
-
-                     <div class="card">
-                        <i class="fas fa-angle-double-down txt-danger"></i>
-                        <div class="card-details">
-                           <span class="card-description">Loss Temperature</span>
-                           <span class="card-result">12.5 &#8451;</span>
-                        </div>
-                     </div>
-
-                     <div class="card">
-                        <i class="fas fa-chart-area txt-danger"></i>
-                        <div class="card-details">
-                           <span class="card-description">PWI</span>
-                           <span class="card-result">12</span>
-                        </div>
-                     </div>
+                 
                   </div>
                </div>
             </section>
@@ -460,7 +506,9 @@
          </main>
       </div>
 
+      <script src="./js/buttonClickHanlders.js"></script>
       <script src="./js/navigationHandlers.js"></script>
       <script src="./js/chartgenerator.js"></script>
+      <script src="./js/selectionbutton.js"></script>
    </body>
 </html>
