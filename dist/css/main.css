@@ -62,6 +62,8 @@
       transition: all 0.5s ease-in-out; }
 
 button {
+  border: none;
+  display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   font-weight: bold;
@@ -199,7 +201,7 @@ button {
       bottom: 0;
       background-color: #39a2a9; }
 
-.input-group input {
+.input-group input, .input-dark, .input-light, .input-primary {
   padding: 0.5rem 1rem;
   border: none;
   transition: border 0.5s ease-in-out; }
@@ -841,6 +843,14 @@ button {
 .battery-icon {
   transform: rotate(-90deg); }
 
+.table {
+  width: 100%;
+  height: auto; }
+  .table[data-theme="light"] {
+    background-color: #f7f9fc; }
+  .table td {
+    padding: 1rem; }
+
 * {
   margin: 0;
   padding: 0;
@@ -866,14 +876,12 @@ label {
   label::before {
     content: "*"; }
 
-a,
-button {
+a {
   border: none;
-  display: block;
+  display: inline-block;
   text-decoration: none;
   color: #9ba9b4; }
-  a:focus,
-  button:focus {
+  a:focus {
     outline: none; }
 
 i {
@@ -1098,6 +1106,11 @@ img {
       color: #f7f9fc; }
   .control-box-description {
     font-weight: bold; }
+
+.tables-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #fff; }
 
 .chart {
   background-color: #f7f9fc;

@@ -75,6 +75,8 @@
 }
 
 %btn {
+  border: none;
+  display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   font-weight: bold;
@@ -787,6 +789,7 @@
 
 .input {
   &-dark {
+    @extend %input;
     background-color: $dark-color;
     border-bottom: 1px solid $dark-color !important;
     &:focus {
@@ -802,6 +805,7 @@
   }
 
   &-light {
+    @extend %input;
     background-color: $light-color;
     border-bottom: 1px solid $dark-color !important;
     &:focus {
@@ -817,6 +821,7 @@
   }
 
   &-primary {
+    @extend %input;
     background-color: $primary-color;
     border-bottom: 1px solid $primary-color !important;
     &:focus {
@@ -1181,4 +1186,17 @@
 
 .battery-icon {
   transform: rotate(-90deg);
+}
+
+.table {
+  width: 100%;
+  height: auto;
+
+  &[data-theme="light"] {
+    background-color: $light-color;
+  }
+
+  td {
+    padding: 1rem;
+  }
 }

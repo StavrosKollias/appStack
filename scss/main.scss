@@ -33,10 +33,9 @@ label {
   }
 }
 
-a,
-button {
+a {
   border: none;
-  display: block;
+  display: inline-block;
   text-decoration: none;
   color: $gray-color;
 
@@ -401,6 +400,12 @@ img {
   &-description {
     font-weight: bold;
   }
+}
+
+.tables-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #fff;
 }
 
 .chart {
