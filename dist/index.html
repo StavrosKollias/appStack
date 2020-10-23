@@ -1,763 +1,743 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"
-      integrity="sha512-9hzM/Gfa9KP1hSBlq3/zyNF/dfbcjAYwUTBWYX+xi8fzfAPHL3ILwS1ci0CTVeuXTGkRAWgRMZZwtSNV7P+nfw=="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/cb82fdc551.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="./css/main.css" />
-    <title>App Stack | Dashboard Default</title>
-  </head>
-  <body>
-    <div id="main-wrapper" data-role="page" class="flex-row" data-theme="light">
-      <section
-        id="side-bar"
-        data-role="side-bar"
-        data-theme="dark"
-        class="side-bar toggled-left"
-      >
-        <div class="container">
-          <div class="side-bar-logo">
-            <div class="logo"><i class="fas fa-cube"></i> AppStack</div>
-          </div>
-          <h2 class="side-bar-section-title">Pages</h2>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#Dashboard">
-                <i class="fas fa-sliders-h"></i>Dashboards
-                <span class="notify opacity-1 bg-info">5</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="index.html">Default</a></li>
-                <li><a href="#Analytics">Analytics</a></li>
-                <li><a href="#E-commerse">E-commerse</a></li>
-                <li><a href="#Social">Social</a></li>
-                <li><a href="#Social">Crypto</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#Pages">
-                <i class="fas fa-pager"></i>Pages
-                <span class="notify opacity-1 bg-info">5</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#Profile">Profile</a></li>
-                <li><a href="#Settings">Settings</a></li>
-                <li><a href="#Clients">Clients</a></li>
-                <li>
-                  <a href="#Projects"
-                    >Projects <i class="fas fa-angle-down"></i>
-                  </a>
-                  <ul>
-                    <li><a href="#list">List</a></li>
-                    <li>
-                      <a href="#details"
-                        >Detail
-                        <span class="notify opacity-1 bg-primary">New</span></a
-                      >
-                    </li>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js"
+         integrity="sha512-9hzM/Gfa9KP1hSBlq3/zyNF/dfbcjAYwUTBWYX+xi8fzfAPHL3ILwS1ci0CTVeuXTGkRAWgRMZZwtSNV7P+nfw=="
+         crossorigin="anonymous"
+      ></script>
+      <script src="https://kit.fontawesome.com/cb82fdc551.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="./css/main.css" />
+      <title>App Stack | Dashboard Default</title>
+   </head>
+   <body>
+      <div id="main-wrapper" data-role="page" class="flex-row" data-theme="light">
+         <section id="side-bar" data-role="side-bar" data-theme="dark" class="side-bar toggled-left">
+            <div class="container">
+               <div class="side-bar-logo">
+                  <div class="logo"><i class="fas fa-cube"></i> AppStack</div>
+               </div>
+               <h2 class="side-bar-section-title">Pages</h2>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#Dashboard">
+                        <i class="fas fa-sliders-h"></i>Dashboards
+                        <span class="notify opacity-1 bg-info">5</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="index.html">Default</a></li>
+                        <li><a href="#Analytics">Analytics</a></li>
+                        <li><a href="#E-commerse">E-commerse</a></li>
+                        <li><a href="#Social">Social</a></li>
+                        <li><a href="#Social">Crypto</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#Pages">
+                        <i class="fas fa-pager"></i>Pages
+                        <span class="notify opacity-1 bg-info">5</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#Profile">Profile</a></li>
+                        <li><a href="#Settings">Settings</a></li>
+                        <li><a href="#Clients">Clients</a></li>
+                        <li>
+                           <a href="#Projects">Projects <i class="fas fa-angle-down"></i> </a>
+                           <ul>
+                              <li><a href="#list">List</a></li>
+                              <li>
+                                 <a href="#details">Detail <span class="notify opacity-1 bg-primary">New</span></a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li><a href="#Invoice">Invoice</a></li>
+                        <li><a href="#Pricing">Pricing</a></li>
+                        <li><a href="#Tasks">Tasks</a></li>
+                        <li>
+                           <a href="#Chat">Chat <span class="notify opacity-1 bg-primary">New</span></a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#Auth">
+                        <i class="fas fa-user"></i>Auth
+                        <span class="notify opacity-1 bg-gray">Special</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#SignIn">Sign In</a></li>
+                        <li><a href="#SignUp">Sign Up</a></li>
+                        <li><a href="#ResetPassword">Reset Password</a></li>
+                        <li><a href="#404">404 Page</a></li>
+                        <li><a href="#500">500 Page</a></li>
+                        <li><a href="#Tasks">Tasks</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#layouts">
+                        <i class="fas fa-desktop"></i>Laypouts
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li>
+                           <a href="#SignIn" onclick="handleStickySideBar()">Sticky Slider</a>
+                        </li>
+                        <li><a href="#collapsedSidebar">Collapsed Sidebar</a></li>
+                        <li><a href="#boxedLayout">Boxed Layout</a></li>
+                        <li><a href="#classic">Clasic Theme</a></li>
+                        <li><a href="#modern">Modern Theme</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#layouts">
+                        <i class="fas fa-book-open"></i>Documentation
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#Introduction">Introduction</a></li>
+                        <li><a href="#GettingStarted">Getting Started</a></li>
+                        <li><a href="#EnviromentVariables">Enviroment Variables</a></li>
+                        <li><a href="#Deployment">Deployment</a></li>
+                        <li><a href="#StateManagement">State Management </a></li>
+                        <li>
+                           <a href="#Plugins">Plugins <span class="notify opacity-1 bg-primary">New</span></a>
+                        </li>
+                        <li><a href="#ChangeLog">ChangeLog</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <h2 class="side-bar-section-title">Tools & Components</h2>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="fas fa-book-open"></i>UI Elements
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#Alerts">Alerts</a></li>
+                        <li><a href="#buttons">Buttons</a></li>
+                        <li><a href="#cards">Cards</a></li>
+                        <li><a href="#carousel">Carousel</a></li>
+                        <li><a href="#embededvideo">Embeded Video</a></li>
+                        <li>
+                           <a href="#general">General <span class="notify opacity-1 bg-secondary">10+</span></a>
+                        </li>
+                        <li><a href="#grid">Grid</a></li>
+                        <li><a href="#modal">Modals</a></li>
+                        <li><a href="#tabs">Tabs</a></li>
+                        <li><a href="#typography">Typography</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="fas fa-heart"></i>Icons
+                        <span class="notify opacity-1 bg-secondary">1500+</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#feather">Feather</a></li>
+                        <li><a href="#fontAwsome">Font Awsome</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="far fa-check-square"></i>Forms
+                        <span class="notify opacity-0 bg-secondary">0</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#layouts">Lay Outs</a></li>
+                        <li><a href="#basicInputs">Basic Inputs</a></li>
+                        <li><a href="#basicInputs">Input Groups</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#tables">
+                        <i class="fas fa-table"></i>Tables
+                        <span class="notify opacity-1 bg-primary">1</span>
+                     </a>
+                  </li>
+               </ul>
+               <h2 class="side-bar-section-title">Plugins & Addons</h2>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="far fa-check-square"></i>Forms Plugins
+                        <span class="notify opacity-0 bg-secondary">0</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#advanceInputs">Advance Inputs</a></li>
+                        <li><a href="#editors">Editors</a></li>
+                        <li><a href="#validation">Validation</a></li>
+                        <li><a href="#validation">Wizard</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="fas fa-table"></i>Advance Tables
+                        <span class="notify opacity-0 bg-secondary">0</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="responsivetable.html">Responsive-Table</a></li>
+                        <li><a href="#pagination">Pagination</a></li>
+                        <li><a href="#rowSelection">Row Selection</a></li>
+                        <li><a href="#expandable Rows">Expandable Rows</a></li>
+                        <li><a href="#CSV">Export CSV</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#UIEements">
+                        <i class="fas fa-chart-pie"></i>Charts
+                        <span class="notify opacity-0 bg-secondary">0</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+                     <ul class="side-bar-item-list">
+                        <li><a href="#pagination">Chart.js</a></li>
+                        <li><a href="#rowSelection">Apex Charts</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#notifications">
+                        <i class="fas fa-bell"></i>Notifications
+                        <span class="notify opacity-0 bg-primary">1</span>
+                     </a>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#map">
+                        <i class="fas fa-map-marker"></i>Maps
+                        <span class="notify opacity-0 bg-primary">0</span>
+                        <i class="fas fa-angle-down"></i>
+                     </a>
+
+                     <ul class="side-bar-item-list">
+                        <li><a href="#pagination">Google</a></li>
+                        <li><a href="#rowSelection">Vector Maps</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <ul class="side-bar-item">
+                  <li>
+                     <a href="#notifications">
+                        <i class="fas fa-calendar-week"></i>Calender
+                        <span class="notify opacity-0 bg-primary">1</span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+
+            <section id="media-main-user" class="media-main-user">
+               <div class="user-info">
+                  <div class="image-user-container-rounded-m">
+                     <img
+                        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+                        alt="user"
+                     />
+                  </div>
+                  <div class="user-details">
+                     <span class="user-info-name">Nick Karvounis</span>
+                     <span class="bg-sucess"><i class="far fa-check-circle bg-success"></i> <span>Online</span></span>
+                  </div>
+               </div>
+            </section>
+         </section>
+
+         <main id="main-wrapper-right" data-role="page-sub-content">
+            <header>
+               <nav id="nav-bar" data-theme="light" data-role="nav-bar" class="nav-bar">
+                  <button id="nav-bar-button" data-theme="light" class="nav-bar-button">
+                     <div></div>
+                  </button>
+                  <div class="input-group">
+                     <input type="text" placeholder="Search Project" class="input-light" />
+                  </div>
+                  <ul class="nav-bar-menu">
+                     <li>
+                        <a href=""> <i class="far fa-comment"></i></a>
+                     </li>
+                     <li>
+                        <a href=""> <i class="far fa-bell-slash"></i></a>
+                     </li>
+                     <li>
+                        <a href="">
+                           <div class="image-container-rounded">
+                              <img src="https://www.countryflags.io/US/flat/64.png" alt="be" />
+                           </div>
+                        </a>
+                        <ul class="drop-down-list">
+                           <li>
+                              <a href="">
+                                 <div class="image-container-rounded">
+                                    <img src="https://www.countryflags.io/gr/flat/64.png" alt="be" />
+                                 </div>
+                                 GR
+                              </a>
+                           </li>
+                           <li>
+                              <a href="">
+                                 <div class="image-container-rounded">
+                                    <img src="https://www.countryflags.io/De/flat/64.png" alt="al" />
+                                 </div>
+                                 DE
+                              </a>
+                           </li>
+                           <li>
+                              <a href=""
+                                 ><div class="image-container-rounded">
+                                    <img src="https://www.countryflags.io/US/flat/64.png" alt="be" />
+                                 </div>
+                                 US
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <div class="user-info" tabindex="0" data-role="user-info">
+                           <div class="image-user-container-rounded">
+                              <img
+                                 src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+                                 alt="user"
+                              />
+                           </div>
+                           <span class="user-info-name">Nick Karvounis</span>
+                           <i class="fas fa-angle-down"></i>
+
+                           <ul class="user-info-settings" data-active="false">
+                              <li>
+                                 <a href="mailto:nick@something.com"><span class="user-info-settings-email">nick@something.com</span> </a>
+                              </li>
+                              <li>
+                                 <a href=""><span class="user-info-settings-options">Options</span> </a>
+                              </li>
+                              <li>
+                                 <a href=""><span class="user-info-settings-singOut">Sign Out</span> </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
                   </ul>
-                </li>
-                <li><a href="#Invoice">Invoice</a></li>
-                <li><a href="#Pricing">Pricing</a></li>
-                <li><a href="#Tasks">Tasks</a></li>
-                <li>
-                  <a href="#Chat"
-                    >Chat
-                    <span class="notify opacity-1 bg-primary">New</span></a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#Auth">
-                <i class="fas fa-user"></i>Auth
-                <span class="notify opacity-1 bg-gray">Special</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#SignIn">Sign In</a></li>
-                <li><a href="#SignUp">Sign Up</a></li>
-                <li><a href="#ResetPassword">Reset Password</a></li>
-                <li><a href="#404">404 Page</a></li>
-                <li><a href="#500">500 Page</a></li>
-                <li><a href="#Tasks">Tasks</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#layouts">
-                <i class="fas fa-desktop"></i>Laypouts
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li>
-                  <a href="#SignIn" onclick="handleStickySideBar()"
-                    >Sticky Slider</a
-                  >
-                </li>
-                <li><a href="#collapsedSidebar">Collapsed Sidebar</a></li>
-                <li><a href="#boxedLayout">Boxed Layout</a></li>
-                <li><a href="#classic">Clasic Theme</a></li>
-                <li><a href="#modern">Modern Theme</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#layouts">
-                <i class="fas fa-book-open"></i>Documentation
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#Introduction">Introduction</a></li>
-                <li><a href="#GettingStarted">Getting Started</a></li>
-                <li><a href="#EnviromentVariables">Enviroment Variables</a></li>
-                <li><a href="#Deployment">Deployment</a></li>
-                <li><a href="#StateManagement">State Management </a></li>
-                <li>
-                  <a href="#Plugins"
-                    >Plugins
-                    <span class="notify opacity-1 bg-primary">New</span></a
-                  >
-                </li>
-                <li><a href="#ChangeLog">ChangeLog</a></li>
-              </ul>
-            </li>
-          </ul>
-          <h2 class="side-bar-section-title">Tools & Components</h2>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#UIEements">
-                <i class="fas fa-book-open"></i>UI Elements
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#Alerts">Alerts</a></li>
-                <li><a href="#buttons">Buttons</a></li>
-                <li><a href="#cards">Cards</a></li>
-                <li><a href="#carousel">Carousel</a></li>
-                <li><a href="#embededvideo">Embeded Video</a></li>
-                <li>
-                  <a href="#general"
-                    >General
-                    <span class="notify opacity-1 bg-secondary">10+</span></a
-                  >
-                </li>
-                <li><a href="#grid">Grid</a></li>
-                <li><a href="#modal">Modals</a></li>
-                <li><a href="#tabs">Tabs</a></li>
-                <li><a href="#typography">Typography</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#UIEements">
-                <i class="fas fa-heart"></i>Icons
-                <span class="notify opacity-1 bg-secondary">1500+</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#feather">Feather</a></li>
-                <li><a href="#fontAwsome">Font Awsome</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#UIEements">
-                <i class="far fa-check-square"></i>Forms
-                <span class="notify opacity-0 bg-secondary">0</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#layouts">Lay Outs</a></li>
-                <li><a href="#basicInputs">Basic Inputs</a></li>
-                <li><a href="#basicInputs">Input Groups</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#tables">
-                <i class="fas fa-table"></i>Tables
-                <span class="notify opacity-1 bg-primary">1</span>
-              </a>
-            </li>
-          </ul>
-          <h2 class="side-bar-section-title">Plugins & Addons</h2>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#UIEements">
-                <i class="far fa-check-square"></i>Forms Plugins
-                <span class="notify opacity-0 bg-secondary">0</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#advanceInputs">Advance Inputs</a></li>
-                <li><a href="#editors">Editors</a></li>
-                <li><a href="#validation">Validation</a></li>
-                <li><a href="#validation">Wizard</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#UIEements">
-                <i class="fas fa-table"></i>Advance Tables
-                <span class="notify opacity-0 bg-secondary">0</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="responsivetable.html">Responsive-Table</a></li>
-                <li><a href="#pagination">Pagination</a></li>
-                <li><a href="#rowSelection">Row Selection</a></li>
-                <li><a href="#expandable Rows">Expandable Rows</a></li>
-                <li><a href="#CSV">Export CSV</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#UIEements">
-                <i class="fas fa-chart-pie"></i>Charts
-                <span class="notify opacity-0 bg-secondary">0</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
-              <ul class="side-bar-item-list">
-                <li><a href="#pagination">Chart.js</a></li>
-                <li><a href="#rowSelection">Apex Charts</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#notifications">
-                <i class="fas fa-bell"></i>Notifications
-                <span class="notify opacity-0 bg-primary">1</span>
-              </a>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#map">
-                <i class="fas fa-map-marker"></i>Maps
-                <span class="notify opacity-0 bg-primary">0</span>
-                <i class="fas fa-angle-down"></i>
-              </a>
+               </nav>
+            </header>
 
-              <ul class="side-bar-item-list">
-                <li><a href="#pagination">Google</a></li>
-                <li><a href="#rowSelection">Vector Maps</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="side-bar-item">
-            <li>
-              <a href="#notifications">
-                <i class="fas fa-calendar-week"></i>Calender
-                <span class="notify opacity-0 bg-primary">1</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+            <section id="control-box" class="control-box">
+               <div class="container">
+                  <div class="control-box-buttons" data-theme="light">
+                     <span class="control-box-description">Buttons:</span>
+                     <div class="input-group">
+                        <input type="text" class="input-light" placeholder="Enter Device address" />
+                     </div>
+                     <button class="btn-success">Connect</button>
+                     <button class="btn-primary">Download</button>
+                     <button class="btn-secondary">Update</button>
+                     <button class="btn-danger">
+                        <i class="far fa-trash-alt"></i>
+                     </button>
 
-        <section id="media-main-user" class="media-main-user">
-          <div class="user-info">
-            <div class="image-user-container-rounded-m">
-              <img
-                src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
-                alt="user"
-              />
-            </div>
-            <div class="user-details">
-              <span class="user-info-name">Nick Karvounis</span>
-              <span class="bg-sucess"
-                ><i class="far fa-check-circle bg-success"></i>
-                <span>Online</span></span
-              >
-            </div>
-          </div>
-        </section>
-      </section>
+                     <button class="btn-success">
+                        <i class="fas fa-pencil-alt"></i>
+                     </button>
 
-      <main id="main-wrapper-right" data-role="page-sub-content">
-        <header>
-          <nav
-            id="nav-bar"
-            data-theme="light"
-            data-role="nav-bar"
-            class="nav-bar"
-          >
-            <button
-              id="nav-bar-button"
-              data-theme="light"
-              class="nav-bar-button"
-            >
-              <div></div>
-            </button>
+                     <button class="btn-info"><i class="fas fa-sync-alt"></i></button>
 
-            <div class="input-group">
-              <input
-                type="text"
-                placeholder="Search Project"
-                class="input-light"
-              />
-            </div>
+                     <input type="range" class="input-range-primary" data-role="input-range" name="" id="" />
+                     <input type="range" class="input-range-secondary" data-role="input-range" name="" id="" />
+                     <input type="range" class="input-range-success" data-role="input-range" name="" id="" />
 
-            <ul class="nav-bar-menu">
-              <li>
-                <a href=""> <i class="far fa-comment"></i></a>
-              </li>
-              <li>
-                <a href=""> <i class="far fa-bell-slash"></i></a>
-              </li>
-              <li>
-                <a href="">
-                  <div class="image-container-rounded">
-                    <img
-                      src="https://www.countryflags.io/US/flat/64.png"
-                      alt="be"
-                    />
+                     <div class="btn-container">
+                        <label for="">Trigger Manual/Temperature</label>
+                        <div class="btn-switch-primary" tabindex="0" data-index="1">
+                           <div></div>
+                        </div>
+                     </div>
+                     <div class="btn-container">
+                        <label for="">Profiler Type</label>
+                        <select name="default-select" id="select-item-profiler" data-role="select-theme" class="select-primary">
+                           <option value="0">6 channel</option>
+                           <option value="1">9 channel</option>
+                           <option value="2">12 channel</option>
+                        </select>
+                     </div>
+
+                     <div class="btn-container">
+                        <label for="">Active Channels</label>
+                        <select name="default-select" id="select-item-profiler" data-role="select-theme" class="select-secondary">
+                           <option value="0">1</option>
+                           <option value="1">2</option>
+                           <option value="2">3</option>
+                           <option value="3">4</option>
+                           <option value="4">5</option>
+                           <option value="5">6</option>
+                        </select>
+                     </div>
+
+                     <div class="btn-container">
+                        <label for="">Success type</label>
+                        <select name="default-select" id="select-item-profiler" data-role="select-theme" class="select-success">
+                           <option value="0">1</option>
+                           <option value="1">2</option>
+                           <option value="2">3</option>
+                           <option value="3">4</option>
+                           <option value="4">5</option>
+                           <option value="5">6</option>
+                        </select>
+                     </div>
+
+                     <div class="btn-container">
+                        <label for="">Danger type</label>
+                        <select name="default-select" id="select-item-profiler" data-role="select-theme" class="select-danger">
+                           <option value="0">1</option>
+                           <option value="1">2</option>
+                           <option value="2">3</option>
+                           <option value="3">4</option>
+                           <option value="4">5</option>
+                           <option value="5">6</option>
+                        </select>
+                     </div>
+
+                     <div class="loading-bars-container">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                     </div>
                   </div>
-                </a>
-                <ul class="drop-down-list">
-                  <li>
-                    <a href="">
-                      <div class="image-container-rounded">
-                        <img
-                          src="https://www.countryflags.io/gr/flat/64.png"
-                          alt="be"
-                        />
-                      </div>
-                      GR
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <div class="image-container-rounded">
-                        <img
-                          src="https://www.countryflags.io/De/flat/64.png"
-                          alt="al"
-                        />
-                      </div>
-                      DE
-                    </a>
-                  </li>
-                  <li>
-                    <a href=""
-                      ><div class="image-container-rounded">
-                        <img
-                          src="https://www.countryflags.io/US/flat/64.png"
-                          alt="be"
-                        />
-                      </div>
-                      US
-                    </a>
-                  </li>
-                </ul>
-              </li>
+               </div>
+            </section>
 
-              <li>
-                <div class="user-info" tabindex="0" data-role="user-info">
-                  <div class="image-user-container-rounded">
-                    <img
-                      src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
-                      alt="user"
-                    />
+            <section id="cards" class="cards">
+               <div class="container">
+                  <div class="cards-content grid-template">
+                     <div class="card grid-2-columns">
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">Battery</span>
+                              <span class="card-result" id="battery-level-label">80%</span>
+                           </div>
+                           <i class="fas fa-battery-three-quarters txt-success battery-icon" id="battery-icon"></i>
+                        </div>
+
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">S/N</span>
+                              <span class="card-result">204</span>
+                           </div>
+                           <i class="fas fa-qrcode txt-secondary"></i>
+                        </div>
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">Connection</span>
+                              <span class="card-result" id="connection-label">on</span>
+                           </div>
+                           <i class="fas fa-wifi txt-success connection-icon"></i>
+                        </div>
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">Calibration</span>
+                              <span class="card-result" id="calibration-label-date">02/02/2019</span>
+                           </div>
+                           <i class="fas fa-check-double txt-danger calibration-icon"></i>
+                        </div>
+                     </div>
+
+                     <div class="card grid-2-columns">
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">Run Time</span>
+                              <span class="card-result">10''</span>
+                           </div>
+
+                           <i class="far fa-clock txt-warning"></i>
+                        </div>
+
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">Total Channels</span>
+                              <span class="card-result">6</span>
+                           </div>
+                           <i class="fas fa-list-ul txt-success"></i>
+                        </div>
+
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">Active Channels</span>
+                              <span class="card-result">4</span>
+                           </div>
+                           <i class="fas fa-list-ul txt-warning"></i>
+                        </div>
+
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">Channels</span>
+                              <span class="card-result">6</span>
+                           </div>
+                           <i class="fas fa-list-ul txt-warning"></i>
+                        </div>
+                     </div>
+
+                     <div class="card grid-2-columns">
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">AVG Temperature</span>
+                              <span class="card-result" id="avg-temp-label">- &#8451;</span>
+                           </div>
+                           <i class="fas fa-chart-line txt-danger avg-temp-icon"></i>
+                        </div>
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">Max Temperature</span>
+                              <span class="card-result" id="max-temp-label"> - &#8451;</span>
+                           </div>
+                           <i class="fas fa-chart-line txt-success max-temp-icon"></i>
+                        </div>
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">Loss Temperature</span>
+                              <span class="card-result" id="loss-temp-label">- &#8451;</span>
+                           </div>
+                           <i class="fas fa-angle-double-down txt-success loss-temp-icon"></i>
+                        </div>
+                        <div class="card-item">
+                           <div class="card-details">
+                              <span class="card-description">PWI</span>
+                              <span class="card-result" id="pwi-label">-</span>
+                           </div>
+                           <i class="fas fa-chart-area txt-danger pwi-icon"></i>
+                        </div>
+                     </div>
                   </div>
-                  <span class="user-info-name">Nick Karvounis</span>
-                  <i class="fas fa-angle-down"></i>
+               </div>
+            </section>
 
-                  <ul class="user-info-settings" data-active="false">
-                    <li>
-                      <a href="mailto:nick@something.com"
-                        ><span class="user-info-settings-email"
-                          >nick@something.com</span
-                        >
-                      </a>
-                    </li>
-                    <li>
-                      <a href=""
-                        ><span class="user-info-settings-options">Options</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href=""
-                        ><span class="user-info-settings-singOut"
-                          >Sign Out</span
-                        >
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </nav>
-        </header>
-
-        <section id="control-box" class="control-box">
-          <div class="container">
-            <div class="control-box-buttons" data-theme="light">
-              <span class="control-box-description">Buttons:</span>
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="input-light"
-                  placeholder="Enter Device address"
-                />
-              </div>
-              <button class="btn-success">Connect</button>
-              <button class="btn-primary">Download</button>
-              <button class="btn-secondary">Update</button>
-              <button class="btn-danger">
-                <i class="far fa-trash-alt"></i>
-              </button>
-
-              <button class="btn-success">
-                <i class="fas fa-pencil-alt"></i>
-              </button>
-
-              <button class="btn-info"><i class="fas fa-sync-alt"></i></button>
-
-              <input
-                type="range"
-                class="input-range-primary"
-                data-role="input-range"
-                name=""
-                id=""
-              />
-              <input
-                type="range"
-                class="input-range-secondary"
-                data-role="input-range"
-                name=""
-                id=""
-              />
-              <input
-                type="range"
-                class="input-range-success"
-                data-role="input-range"
-                name=""
-                id=""
-              />
-
-              <div class="btn-container">
-                <label for="">Trigger Manual/Temperature</label>
-                <div class="btn-switch-primary" tabindex="0" data-index="1">
-                  <div></div>
-                </div>
-              </div>
-              <div class="btn-container">
-                <label for="">Profiler Type</label>
-                <select
-                  name="default-select"
-                  id="select-item-profiler"
-                  data-role="select-theme"
-                  class="select-primary"
-                >
-                  <option value="0">6 channel</option>
-                  <option value="1">9 channel</option>
-                  <option value="2">12 channel</option>
-                </select>
-              </div>
-
-              <div class="btn-container">
-                <label for="">Active Channels</label>
-                <select
-                  name="default-select"
-                  id="select-item-profiler"
-                  data-role="select-theme"
-                  class="select-secondary"
-                >
-                  <option value="0">1</option>
-                  <option value="1">2</option>
-                  <option value="2">3</option>
-                  <option value="3">4</option>
-                  <option value="4">5</option>
-                  <option value="5">6</option>
-                </select>
-              </div>
-
-              <div class="btn-container">
-                <label for="">Success type</label>
-                <select
-                  name="default-select"
-                  id="select-item-profiler"
-                  data-role="select-theme"
-                  class="select-success"
-                >
-                  <option value="0">1</option>
-                  <option value="1">2</option>
-                  <option value="2">3</option>
-                  <option value="3">4</option>
-                  <option value="4">5</option>
-                  <option value="5">6</option>
-                </select>
-              </div>
-
-              <div class="btn-container">
-                <label for="">Danger type</label>
-                <select
-                  name="default-select"
-                  id="select-item-profiler"
-                  data-role="select-theme"
-                  class="select-danger"
-                >
-                  <option value="0">1</option>
-                  <option value="1">2</option>
-                  <option value="2">3</option>
-                  <option value="3">4</option>
-                  <option value="4">5</option>
-                  <option value="5">6</option>
-                </select>
-              </div>
-
-              <div class="loading-bars-container">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="cards" class="cards">
-          <div class="container">
-            <div class="cards-content grid-template">
-              <div class="card grid-2-columns">
-                <div class="card-item">
-                  <div class="card-details">
-                    <span class="card-description">Battery</span>
-                    <span class="card-result" id="battery-level-label"
-                      >80%</span
-                    >
+            <section id="charts-container" class="charts-container">
+               <div class="container">
+                  <div class="charts-content grid-2-columns grid-gap-3">
+                     <div class="chart">
+                        <canvas id="temperature-chart"></canvas>
+                     </div>
+                     <div class="chart">
+                        <canvas id="pie-chart"></canvas>
+                     </div>
                   </div>
-                  <i
-                    class="fas fa-battery-three-quarters txt-success battery-icon"
-                    id="battery-icon"
-                  ></i>
-                </div>
+               </div>
+            </section>
 
-                <div class="card-item">
-                  <div class="card-details">
-                    <span class="card-description">S/N</span>
-                    <span class="card-result">204</span>
+            <section id="tables-grid">
+               <div class="container">
+                  <div id="tables-container" class="tables-container">
+                     <div class="table-container">
+                        <table class="table" data-theme="light">
+                           <legend>Tamplate Records</legend>
+                           <tbody>
+                              <tr>
+                                 <th>Template Name</th>
+                                 <th>Action</th>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <input type="text" class="input-light" value="Template 1" />
+                                 </td>
+                                 <td>
+                                    <button class="btn-danger">
+                                       <i class="far fa-trash-alt"></i>
+                                    </button>
+
+                                    <button class="btn-success">
+                                       <i class="fas fa-pencil-alt"></i>
+                                    </button>
+
+                                    <button class="btn-info">
+                                       <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <input type="text" class="input-light" value="Template 2" />
+                                 </td>
+                                 <td>
+                                    <button class="btn-danger">
+                                       <i class="far fa-trash-alt"></i>
+                                    </button>
+
+                                    <button class="btn-success">
+                                       <i class="fas fa-pencil-alt"></i>
+                                    </button>
+
+                                    <button class="btn-info">
+                                       <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>
+                                    <input type="text" class="input-light" value="Template 3" />
+                                 </td>
+                                 <td>
+                                    <button class="btn-danger">
+                                       <i class="far fa-trash-alt"></i>
+                                    </button>
+
+                                    <button class="btn-success">
+                                       <i class="fas fa-pencil-alt"></i>
+                                    </button>
+
+                                    <button class="btn-info">
+                                       <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>
+                                    <input type="text" class="input-light" value="Template 4" />
+                                 </td>
+                                 <td>
+                                    <button class="btn-danger">
+                                       <i class="far fa-trash-alt"></i>
+                                    </button>
+
+                                    <button class="btn-success">
+                                       <i class="fas fa-pencil-alt"></i>
+                                    </button>
+
+                                    <button class="btn-info">
+                                       <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <button class="btn-info">Load More</button>
+                     </div>
+
+                     <div class="table-container">
+                        <table class="table-bordered" data-theme="light">
+                           <legend>Zones Configuration</legend>
+                           <tbody>
+                              <tr>
+                                 <th>Name</th>
+                                 <th>Length</th>
+                                 <th>Max Temp</th>
+                                 <th>Min Temp</th>
+                                 <th>Action</th>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <input type="text" class="input-light" value="Zone 1" />
+                                 </td>
+                                 <td>
+                                    <input type="text" class="input-light" value="20" />
+                                 </td>
+
+                                 <td>
+                                    <input type="text" class="input-light" value="150" />
+                                 </td>
+                                 <td>
+                                    <input type="text" class="input-light" value="100" />
+                                 </td>
+
+                                 <td>
+                                    <button class="btn-danger">
+                                       <i class="far fa-trash-alt"></i>
+                                    </button>
+
+                                    <button class="btn-success">
+                                       <i class="fas fa-pencil-alt"></i>
+                                    </button>
+
+                                    <button class="btn-info">
+                                       <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                 </td>
+                              </tr>
+
+                              <tr>
+                                 <td>
+                                    <input type="text" class="input-light" value="Zone 2" />
+                                 </td>
+                                 <td>
+                                    <input type="text" class="input-light" value="20" />
+                                 </td>
+
+                                 <td>
+                                    <input type="text" class="input-light" value="150" />
+                                 </td>
+                                 <td>
+                                    <input type="text" class="input-light" value="100" />
+                                 </td>
+
+                                 <td>
+                                    <button class="btn-danger">
+                                       <i class="far fa-trash-alt"></i>
+                                    </button>
+
+                                    <button class="btn-success">
+                                       <i class="fas fa-pencil-alt"></i>
+                                    </button>
+
+                                    <button class="btn-info">
+                                       <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                        <button class="btn-info">Load More</button>
+                     </div>
                   </div>
-                  <i class="fas fa-qrcode txt-secondary"></i>
-                </div>
-                <div class="card-item">
-                  <div class="card-details">
-                    <span class="card-description">Connection</span>
-                    <span class="card-result" id="connection-label">on</span>
+               </div>
+            </section>
+
+            <section id="footer" data-theme="light">
+               <div class="container">
+                  <div class="company-details">
+                     <span class="company-name">Circutimaster Designs Ltd</span>
+
+                     <a href="http://circuitmaster.co.uk/contact">Circutimaster.co.uk</a>
                   </div>
-                  <i class="fas fa-wifi txt-success connection-icon"></i>
-                </div>
-                <div class="card-item">
-                  <div class="card-details">
-                    <span class="card-description">Calibration</span>
-                    <span class="card-result" id="calibration-label-date"
-                      >02/02/2019</span
-                    >
-                  </div>
-                  <i
-                    class="fas fa-check-double txt-danger calibration-icon"
-                  ></i>
-                </div>
-              </div>
+               </div>
+            </section>
+         </main>
+      </div>
 
-              <div class="card grid-2-columns">
-                <div class="card-item">
-                  <div class="card-details">
-                    <span class="card-description">Run Time</span>
-                    <span class="card-result">10''</span>
-                  </div>
-
-                  <i class="far fa-clock txt-warning"></i>
-                </div>
-
-                <div class="card-item">
-                  <i class="fas fa-list-ul txt-warning"></i>
-                  <div class="card-details">
-                    <span class="card-description">Total Channels</span>
-                    <span class="card-result">6</span>
-                  </div>
-                </div>
-
-                <div class="card-item">
-                  <div class="card-details">
-                    <span class="card-description">Active Channels</span>
-                    <span class="card-result">4</span>
-                  </div>
-                  <i class="fas fa-list-ul txt-warning"></i>
-                </div>
-
-                <div class="card-item">
-                  <div class="card-details">
-                    <span class="card-description">Channels</span>
-                    <span class="card-result">6</span>
-                  </div>
-                  <i class="fas fa-list-ul txt-warning"></i>
-                </div>
-              </div>
-
-              <div class="card grid-2-columns">
-                <div class="card-item">
-                  <div class="card-details">
-                    <span class="card-description">AVG Temperature</span>
-                    <span class="card-result" id="avg-temp-label"
-                      >- &#8451;</span
-                    >
-                  </div>
-                  <i class="fas fa-chart-line txt-danger avg-temp-icon"></i>
-                </div>
-                <div class="card-item">
-                  <div class="card-details">
-                    <span class="card-description">Max Temperature</span>
-                    <span class="card-result" id="max-temp-label">
-                      - &#8451;</span
-                    >
-                  </div>
-                  <i class="fas fa-chart-line txt-success max-temp-icon"></i>
-                </div>
-                <div class="card-item">
-                  <div class="card-details">
-                    <span class="card-description">Loss Temperature</span>
-                    <span class="card-result" id="loss-temp-label"
-                      >12.5 &#8451;</span
-                    >
-                  </div>
-                  <i
-                    class="fas fa-angle-double-down txt-success loss-temp-icon"
-                  ></i>
-                </div>
-                <div class="card-item">
-                  <div class="card-details">
-                    <span class="card-description">PWI</span>
-                    <span class="card-result" id="pwi-label">12</span>
-                  </div>
-                  <i class="fas fa-chart-area txt-danger pwi-icon"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="charts-container" class="charts-container">
-          <div class="container">
-            <div class="charts-content grid-2-columns grid-gap-3">
-              <div class="chart">
-                <canvas id="temperature-chart"></canvas>
-              </div>
-              <div class="chart">
-                <canvas id="pie-chart"></canvas>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="tables-grid">
-          <div class="container">
-            <div id="tables-container" class="tables-container">
-              <div class="table-container">
-                <table class="table" data-theme="light">
-                  <legend>Tamplate Records</legend>
-                  <tbody>
-                    <tr>
-                      <th>Template Name</th>
-                      <th>Action</th>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input
-                          type="text"
-                          class="input-light"
-                          value="Template 1"
-                        />
-                      </td>
-                      <td>
-                        <button class="btn-danger">
-                          <i class="far fa-trash-alt"></i>
-                        </button>
-
-                        <button class="btn-success">
-                          <i class="fas fa-pencil-alt"></i>
-                        </button>
-
-                        <button class="btn-info">
-                          <i class="fas fa-sync-alt"></i>
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input
-                          type="text"
-                          class="input-light"
-                          value="Template 2"
-                        />
-                      </td>
-                      <td>
-                        <button class="btn-danger">
-                          <i class="far fa-trash-alt"></i>
-                        </button>
-
-                        <button class="btn-success">
-                          <i class="fas fa-pencil-alt"></i>
-                        </button>
-
-                        <button class="btn-info">
-                          <i class="fas fa-sync-alt"></i>
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <th></th>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="footer" data-theme="light">
-          <div class="container">
-            <div class="company-details">
-              <span class="company-name">Circutimaster Designs Ltd</span>
-
-              <a href="http://circuitmaster.co.uk/contact"
-                >Circutimaster.co.uk</a
-              >
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <script src="./js/inputRange.js"></script>
-    <script src="./js/buttonClickHanlders.js"></script>
-    <script src="./js/navigationHandlers.js"></script>
-    <script src="./js/chartgenerator.js"></script>
-    <script src="./js/selectionbutton.js"></script>
-  </body>
+      <script src="./js/inputRange.js"></script>
+      <script src="./js/buttonClickHanlders.js"></script>
+      <script src="./js/navigationHandlers.js"></script>
+      <script src="./js/chartgenerator.js"></script>
+      <script src="./js/selectionbutton.js"></script>
+   </body>
 </html>

@@ -401,7 +401,18 @@ img {
 .tables-container {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
-   background-color: #fff;
+   padding: 1rem 0;
+   grid-gap: 1rem;
+
+   .table-container {
+      background-color: #fff;
+      padding: 1rem;
+
+      & > button {
+         width: 100%;
+         margin: 1rem 0;
+      }
+   }
 }
 
 // Charts Section Dashborad
