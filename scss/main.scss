@@ -45,6 +45,10 @@ button {
   }
 }
 
+button {
+  @extend %btn;
+}
+
 i {
   transition: transform 0.4s ease-in-out;
 }
@@ -53,17 +57,18 @@ img {
   width: 100%;
 }
 
-#main-wrapper-right {
+[data-role="page-sub-content"] {
   width: 100%;
   overflow-x: auto;
   position: relative;
+  padding-bottom: 6rem;
 
   &[data-tablet="true"] {
     min-width: 100%;
   }
 }
 
-#main-wrapper {
+[data-role="page"] {
   width: 100%;
   @extend %main-wrapper;
   &[data-theme="dark"] {
@@ -80,7 +85,7 @@ img {
   }
 }
 
-.side-bar {
+[data-role="side-bar"] {
   &[data-theme="dark"] {
     @extend %side-bar;
     background-color: $dark-color;
@@ -110,78 +115,61 @@ img {
     }
   }
 
-  &-logo {
-    display: block;
-
-    .logo {
-      @extend %side-bar-logo;
-    }
-  }
-
-  &-item {
-    position: relative;
-    li > a {
-      @extend %side-bar-button;
-      .fas,
-      .far {
-        color: $gray-color;
-      }
-
-      .far:first-child,
-      .fas:first-child {
-        margin-right: 0.8rem;
-        font-size: 1.4rem;
-      }
-
-      .fas:last-child {
-        position: absolute;
-        right: 0;
-        margin-right: 1rem;
-      }
-
-      &.current,
-      &.current-2 {
-        color: $light-color;
-        .fas:last-child {
-          color: $light-color;
-          transform: rotate(-180deg) !important;
-        }
-        .fas:first-child {
-          color: $light-color;
-        }
-      }
-
-      &:focus,
-      &:hover,
-      &:focus .fas:last-child,
-      &:hover .fas:last-child,
-      &:hover .fas:first-child,
-      &:hover .far:first-child,
-      &:focus .far:first-child,
-      &:focus .fas:first-child {
-        color: $light-color;
-      }
-    }
-
-    &-list {
+  .side-bar {
+    &-logo {
       display: block;
-      overflow: hidden;
-      height: 0;
-      max-height: 0px;
-      min-height: 0px;
-      transition: min-height 0.5s ease, max-height 0.5s ease,
-        padding-left 0.5s ease;
 
-      &.active-side-1 {
-        padding-left: 2.1rem;
-        height: auto;
-        max-height: 30rem;
-        min-height: 5rem;
-        transition: max-height 0.5s ease, min-height 0.5s ease,
-          padding-left 0.5s ease;
+      .logo {
+        @extend %side-bar-logo;
+      }
+    }
+
+    &-item {
+      position: relative;
+      li > a {
+        @extend %side-bar-button;
+        .fas,
+        .far {
+          color: $gray-color;
+        }
+
+        .far:first-child,
+        .fas:first-child {
+          margin-right: 0.8rem;
+          font-size: 1.4rem;
+        }
+
+        .fas:last-child {
+          position: absolute;
+          right: 0;
+          margin-right: 1rem;
+        }
+
+        &.current,
+        &.current-2 {
+          color: $light-color;
+          .fas:last-child {
+            color: $light-color;
+            transform: rotate(-180deg) !important;
+          }
+          .fas:first-child {
+            color: $light-color;
+          }
+        }
+
+        &:focus,
+        &:hover,
+        &:focus .fas:last-child,
+        &:hover .fas:last-child,
+        &:hover .fas:first-child,
+        &:hover .far:first-child,
+        &:focus .far:first-child,
+        &:focus .fas:first-child {
+          color: $light-color;
+        }
       }
 
-      ul {
+      &-list {
         display: block;
         overflow: hidden;
         height: 0;
@@ -190,21 +178,41 @@ img {
         transition: min-height 0.5s ease, max-height 0.5s ease,
           padding-left 0.5s ease;
 
-        &.active-side-2 {
-          padding-left: 0.5rem;
+        &.active-side-1 {
+          padding-left: 2.1rem;
           height: auto;
-          max-height: 20rem;
-          min-height: 2rem;
+          max-height: 30rem;
+          min-height: 5rem;
           transition: max-height 0.5s ease, min-height 0.5s ease,
             padding-left 0.5s ease;
+        }
+
+        ul {
+          display: block;
+          overflow: hidden;
+          height: 0;
+          max-height: 0px;
+          min-height: 0px;
+          transition: min-height 0.5s ease, max-height 0.5s ease,
+            padding-left 0.5s ease;
+
+          &.active-side-2 {
+            padding-left: 0.5rem;
+            height: auto;
+            max-height: 20rem;
+            min-height: 2rem;
+            transition: max-height 0.5s ease, min-height 0.5s ease,
+              padding-left 0.5s ease;
+          }
         }
       }
     }
   }
 }
 
-.top-nav {
-  @extend %top-nav;
+[data-role="nav-bar"] {
+  @extend %nav-bar;
+
   &[data-theme="light"] {
     background-color: $white-color;
   }
@@ -217,83 +225,85 @@ img {
     background-color: $primary-color;
   }
 
-  &-button {
-    @extend %btn-sandwich;
-    //  flex: 1;
-    &[data-theme="light"] {
-      background-color: $white-color;
-      .fas,
-      .far {
-        color: set-txt-color($white-color);
+  &.nav-bar {
+    .nav-bar-button {
+      @extend %btn-sandwich;
+      //  flex: 1;
+      &[data-theme="light"] {
+        background-color: $white-color;
+        .fas,
+        .far {
+          color: set-txt-color($white-color);
+        }
+        div {
+          background-color: $dark-color;
+          &::before {
+            background-color: $dark-color;
+          }
+
+          &::after {
+            background-color: $dark-color;
+          }
+        }
       }
-      div {
+      &[data-theme="dark"] {
         background-color: $dark-color;
-        &::before {
-          background-color: $dark-color;
+        .fas,
+        .far {
+          color: set-txt-color($dark-color);
         }
-
-        &::after {
-          background-color: $dark-color;
-        }
-      }
-    }
-    &[data-theme="dark"] {
-      background-color: $dark-color;
-      .fas,
-      .far {
-        color: set-txt-color($dark-color);
-      }
-      div {
-        background-color: $light-color;
-        &::before {
+        div {
           background-color: $light-color;
-        }
+          &::before {
+            background-color: $light-color;
+          }
 
-        &::after {
-          background-color: $light-color;
+          &::after {
+            background-color: $light-color;
+          }
         }
+      }
+
+      &[data-theme="primary"] {
+        background-color: $primary-color;
+        .fas,
+        .far {
+          color: set-txt-color($primary-color);
+        }
+        div {
+          background-color: $light-color;
+          &::before {
+            background-color: $light-color;
+          }
+
+          &::after {
+            background-color: $light-color;
+          }
+        }
+      }
+
+      &:hover {
+        opacity: 0.8;
       }
     }
 
-    &[data-theme="primary"] {
-      background-color: $primary-color;
-      .fas,
-      .far {
-        color: set-txt-color($primary-color);
-      }
-      div {
-        background-color: $light-color;
-        &::before {
-          background-color: $light-color;
-        }
+    & *:nth-child(2) {
+      flex: 2;
+    }
 
-        &::after {
-          background-color: $light-color;
-        }
+    .input-group {
+      display: none;
+
+      @media (min-width: 988px) {
+        display: block;
       }
     }
 
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-
-  & *:nth-child(2) {
-    flex: 2;
-  }
-
-  .input-group {
-    display: none;
-
-    @media (min-width: 988px) {
-      display: block;
-    }
-  }
-
-  .nav-menu {
-    @extend %top-nav-menu;
-    .drop-down-list {
-      @extend %drop-down-list;
+    .nav-bar-menu {
+      @extend %nav-bar-menu;
+      .drop-down-list {
+        @extend %drop-down-list;
+      }
     }
   }
 }
@@ -320,21 +330,36 @@ img {
       width: 100%;
       display: flex;
       align-items: center;
+      flex-direction: column;
       justify-content: flex-start;
+      padding: 1rem;
+
+      @media (min-width: 988px) {
+        flex-direction: row;
+        padding: 1rem;
+      }
     }
 
     .fas,
     .far {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+      @media (min-width: 988px) {
+        font-size: 1.5rem;
+      }
     }
 
     &-details {
       flex: 2;
       text-align: center;
+      width: 100%;
       > * {
         display: block;
-        font-size: 1.2rem;
-        padding: 0.4rem;
+        font-size: 0.9rem;
+        padding-bottom: 0.4rem;
+
+        @media (min-width: 988px) {
+          font-size: 1.5rem;
+        }
 
         &:first-child {
           font-size: 0.7rem;
@@ -371,10 +396,6 @@ img {
       background-color: $dark-color;
       color: $light-color;
     }
-
-    button {
-      @extend %btn;
-    }
   }
 
   &-description {
@@ -384,14 +405,19 @@ img {
 
 .chart {
   background-color: $light-color;
-  width: 50%;
-  height: 20rem;
+  width: 100%;
+  height: auto;
+  max-height: 30rem;
   resize: both;
   canvas {
     padding: 1rem;
-    // width: 100%;
-    // height: 100%;
+    width: 100% !important;
+    height: 100%;
   }
+}
+
+.chart-container {
+  padding: 2rem;
 }
 
 #footer {
