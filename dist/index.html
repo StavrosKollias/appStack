@@ -675,68 +675,243 @@
           </div>
         </section>
 
-        <section id="stats-container">
+        <section class="tabs-container py-1" id="tabs-container">
           <div class="container">
-            <div id="tables-container" class="tables-container">
-              <div class="table-container bg-dark">
-                <table class="table data" data-theme="dark">
-                  <legend>Zone Stats</legend>
-                  <tbody>
-                    <tr>
-                      <th>Channel</th>
-                      <th>Min Temp</th>
-                      <th>Min Time</th>
-                      <th>Max Temp</th>
-                      <th>Max Time</th>
-                      <th>Mean Temp</th>
-                    </tr>
-                    <tr>
-                      <td>Channel 1</td>
-                      <td>10</td>
+            <div class="tabs-component" data-theme="light">
+              <div class="tabs">
+                <button
+                  data-role="tab"
+                  tab-index="0"
+                  class="tabs-item active btn-light"
+                >
+                  Statistics
+                </button>
+                <button
+                  data-role="tab"
+                  tab-index="1"
+                  class="tabs-item btn-light"
+                >
+                  Slopes
+                </button>
+                <button
+                  data-role="tab"
+                  tab-index="2"
+                  class="tabs-item btn-light"
+                >
+                  Cursors
+                </button>
+              </div>
+              <div class="tabs-blocks">
+                <div class="tabs-blocks-item active">
+                  <div id="tables-container" class="tables-container">
+                    <div class="table-container bg-light">
+                      <table class="table data" data-theme="light">
+                        <legend>Zone Stats</legend>
+                        <tbody>
+                          <tr>
+                            <th>Channel</th>
+                            <th>Min Temp</th>
+                            <th>Min Time</th>
+                            <th>Max Temp</th>
+                            <th>Max Time</th>
+                            <th>Mean Temp</th>
+                          </tr>
+                          <tr>
+                            <td>Channel 1</td>
+                            <td>10</td>
 
-                      <td>20</td>
+                            <td>20</td>
 
-                      <td>50</td>
+                            <td>50</td>
 
-                      <td>50</td>
+                            <td>50</td>
 
-                      <td>100</td>
-                    </tr>
-                    <tr>
-                      <td>Channel 2</td>
-                      <td>10</td>
+                            <td>100</td>
+                          </tr>
+                          <tr>
+                            <td>Channel 2</td>
+                            <td>10</td>
 
-                      <td>20</td>
+                            <td>20</td>
 
-                      <td>50</td>
+                            <td>50</td>
 
-                      <td>50</td>
+                            <td>50</td>
 
-                      <td>100</td>
-                    </tr>
-                    <tr>
-                      <td>Channel 3</td>
-                      <td>10</td>
+                            <td>100</td>
+                          </tr>
+                          <tr>
+                            <td>Channel 3</td>
+                            <td>10</td>
 
-                      <td>20</td>
+                            <td>20</td>
 
-                      <td>50</td>
+                            <td>50</td>
 
-                      <td>50</td>
+                            <td>50</td>
 
-                      <td>100</td>
-                    </tr>
-                    <tr>
-                      <td>Channel 4</td>
-                      <td>10</td>
-                      <td>20</td>
-                      <td>50</td>
-                      <td>50</td>
-                      <td>100</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <button class="btn-light">Load More</button>
+                            <td>100</td>
+                          </tr>
+                          <tr>
+                            <td>Channel 4</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>100</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button
+                        class="btn-dark"
+                        data-active="false"
+                        onclick="handleZoomParent(this)"
+                      >
+                        Zoom
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="tabs-blocks-item">
+                  <div id="tables-container" class="tables-container">
+                    <div class="table-container bg-light">
+                      <table class="table data" data-theme="light">
+                        <legend>SLopes Stats</legend>
+                        <tbody>
+                          <tr>
+                            <th>Channel</th>
+                            <th>Min Temp</th>
+                            <th>Min Time</th>
+                            <th>Max Temp</th>
+                            <th>Max Time</th>
+                            <th>Mean Temp</th>
+                          </tr>
+                          <tr>
+                            <td>Channel 1</td>
+                            <td>10</td>
+
+                            <td>20</td>
+
+                            <td>50</td>
+
+                            <td>50</td>
+
+                            <td>100</td>
+                          </tr>
+                          <tr>
+                            <td>Channel 2</td>
+                            <td>10</td>
+
+                            <td>20</td>
+
+                            <td>50</td>
+
+                            <td>50</td>
+
+                            <td>100</td>
+                          </tr>
+                          <tr>
+                            <td>Channel 3</td>
+                            <td>10</td>
+
+                            <td>20</td>
+
+                            <td>50</td>
+
+                            <td>50</td>
+
+                            <td>100</td>
+                          </tr>
+                          <tr>
+                            <td>Channel 4</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>100</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button
+                        class="btn-dark"
+                        data-active="false"
+                        onclick="handleZoomParent(this)"
+                      >
+                        Zoom
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="tabs-blocks-item">
+                  <div id="tables-container" class="tables-container">
+                    <div class="table-container bg-light">
+                      <table class="table data" data-theme="light">
+                        <legend>Cursors Stats</legend>
+                        <tbody>
+                          <tr>
+                            <th>Channel</th>
+                            <th>Min Temp</th>
+                            <th>Min Time</th>
+                            <th>Max Temp</th>
+                            <th>Max Time</th>
+                            <th>Mean Temp</th>
+                          </tr>
+                          <tr>
+                            <td>Channel 1</td>
+                            <td>10</td>
+
+                            <td>20</td>
+
+                            <td>50</td>
+
+                            <td>50</td>
+
+                            <td>100</td>
+                          </tr>
+                          <tr>
+                            <td>Channel 2</td>
+                            <td>10</td>
+
+                            <td>20</td>
+
+                            <td>50</td>
+
+                            <td>50</td>
+
+                            <td>100</td>
+                          </tr>
+                          <tr>
+                            <td>Channel 3</td>
+                            <td>10</td>
+
+                            <td>20</td>
+
+                            <td>50</td>
+
+                            <td>50</td>
+
+                            <td>100</td>
+                          </tr>
+                          <tr>
+                            <td>Channel 4</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>100</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button
+                        class="btn-dark"
+                        data-active="false"
+                        onclick="handleZoomParent(this)"
+                      >
+                        Load More
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -957,7 +1132,7 @@
         <section id="grid-container-table" class="py-2">
           <div class="container">
             <div class="grid-container bg-light">
-              <h3 class="grid-container-table-title">Zones Table</h3>
+              <h3 class="grid-container-table-title">Zones Records</h3>
               <div class="grid-column-2">
                 <div class="grid-row">
                   <div class="grid-item-row">Name</div>

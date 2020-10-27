@@ -932,6 +932,34 @@ button {
   overflow: auto;
   z-index: 100; }
 
+.tabs {
+  display: flex;
+  flex-direction: column; }
+  .tabs-component {
+    width: auto; }
+    .tabs-component[data-theme="light"] {
+      background-color: #f7f9fc;
+      color: #404e64; }
+  @media (min-width: 600px) {
+    .tabs {
+      flex-direction: row; } }
+  .tabs-item {
+    border-bottom: 1px solid #f7f9fc; }
+    .tabs-item.active {
+      background-color: #404e64;
+      color: #f7f9fc; }
+  .tabs-blocks {
+    width: 100%;
+    position: relative; }
+    .tabs-blocks-item {
+      position: absolute;
+      position: absolute;
+      top: 0;
+      z-index: -1; }
+      .tabs-blocks-item.active {
+        position: relative;
+        z-index: 0; }
+
 * {
   margin: 0;
   padding: 0;
@@ -1136,8 +1164,7 @@ img {
   grid-template-columns: repeat(2, 1fr); }
   @media (min-width: 600px) {
     .cards .card {
-      min-width: 20rem;
-      margin: auto; } }
+      min-width: 20rem; } }
   .cards .card-item {
     width: 100%;
     display: flex;
@@ -1200,7 +1227,9 @@ img {
     padding: 1rem; }
     .tables-container .table-container > button {
       width: 100%;
-      margin: 1rem 0; }
+      margin: 1rem 0;
+      max-width: 50%;
+      margin: auto; }
 
 .chart {
   background-color: #f7f9fc;

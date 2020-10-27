@@ -159,7 +159,7 @@ function handleNavResizeLoad() {
     toggleClassName = "toggled-right";
     btnClassName = "active-side-right";
   }
-  if (document.documentElement.clientWidth < 987) {
+  if (document.documentElement.clientWidth < 1500) {
     mainWrapper.querySelector("[data-role='page-sub-content']").dataset.tablet =
       "true";
     hideSideBar(sideBar, btnNav, btnClassName, toggleClassName);
@@ -328,7 +328,7 @@ if (tempChartElement && window.location.pathname == "/dist/index.html") {
 }
 
 function handleZoomParent(element) {
-  const parent = document.querySelector(".table-container");
+  const parent = element.closest(".table-container");
   const html = document.querySelector("html");
   if (element.dataset.active == "false") {
     element.innerText = "Close";

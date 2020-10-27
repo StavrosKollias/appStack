@@ -144,6 +144,7 @@ if (pieChart) {
 
     // Configuration options go here
     options: {
+      percentageInnerCutout: 20,
       bezierCurve: true,
       maintainAspectRatio: false,
       responsive: true,
@@ -205,7 +206,7 @@ function hoverOverChart(chart, event) {
       time: parseInt(Number(newx).toFixed(0)),
     };
 
-    // document.getElementById("temp-input").value = hoverData.temp;
-    // document.getElementById("time-input").value = hoverData.time;
+    document.getElementById("temp-input").value = hoverData.temp;
+    document.getElementById("time-input").value = hoverData.time;
   }
 }
