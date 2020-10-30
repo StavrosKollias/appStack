@@ -206,7 +206,7 @@ function hoverOverChart(chart, event) {
       time: parseInt(Number(newx).toFixed(0)),
     };
 
-    document.getElementById("temp-input").value = hoverData.temp;
-    document.getElementById("time-input").value = hoverData.time;
+    // document.getElementById("temp-input").value = hoverData.temp;
+    // document.getElementById("time-input").value = hoverData.time;
   }
 }
